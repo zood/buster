@@ -1,0 +1,54 @@
+body {
+    padding: 0em;
+    margin: 0em;
+    background: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    width: 100%;
+    margin: 0em;
+    display: flex;
+    justify-content: space-between;
+}
+
+#header-logo {
+    height: 4em;
+    padding: 1em;
+}
+
+#menu {
+    padding: 1em;
+    margin-top: auto;
+    margin-bottom: auto;
+    justify-content: flex-end;
+}
+
+#menu > .item {
+    color: #3c4466;
+    text-decoration: none;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+#screenshots-container {
+    background: #5cd1ff;
+    padding: 2em;
+}
+
+#presenting-zood {
+    text-align: center;
+    color: white;
+    font-size: 2em;
+}
+
+#screenshots {
+    display: flex;
+    flex-flow: row;
+}
+
+#screenshots > img {
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
