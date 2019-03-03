@@ -37,7 +37,12 @@ func main() {
 	r.HandleFunc("/about", aboutHandler).Methods(http.MethodGet)
 	r.HandleFunc("/products/location", locationAppHomeHandler).Methods(http.MethodGet)
 
-	hostAddress := fmt.Sprintf(":%d", *port)
+	var hostAddress string
+	if *devMode {
+		hostAddress = fmt.Sprintf(":%d", *port)
+	} else {
+		hostAddress = fmt.Sprintf("127.0.0.1:%d", *port)
+	}
 	server := http.Server{
 		Addr:         hostAddress,
 		Handler:      r,
