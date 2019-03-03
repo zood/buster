@@ -31,6 +31,7 @@ func main() {
 	r := mux.NewRouter().StrictSlash(true)
 	r.PathPrefix("/css/").Handler(http.StripPrefix("/css/", http.FileServer(http.Dir(filepath.Join(*resPath, "css")))))
 	r.PathPrefix("/images/").Handler(http.StripPrefix("/images/", http.FileServer(http.Dir(filepath.Join(*resPath, "images")))))
+	r.PathPrefix("/fonts/").Handler(http.StripPrefix("/fonts/", http.FileServer(http.Dir(filepath.Join(*resPath, "fonts")))))
 
 	r.HandleFunc("/", homeHandler).Methods(http.MethodGet)
 	r.HandleFunc("/privacy", privacyHandler).Methods(http.MethodGet)
