@@ -1,0 +1,78 @@
+#section-zood-location {
+    background-color: white;
+    text-align: center;
+    padding-top: 32px;
+}
+
+#screenshots {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#screenshots img {
+    margin-left: 32px;
+    margin-right: 32px;
+    margin-top: 32px;
+}
+
+.badge {
+    width: 175px;
+    height: auto;
+}
+
+.screenshot {
+    width: 200px;
+    height: auto;
+}
+
+#app-icon {
+    height: 96px;
+    width: auto;
+}
+
+#app-icon-and-name {
+    vertical-align: middle;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+#app-name {
+    font-size: 28px;
+    font-weight: 500;
+    margin-left: 8px;
+}
+
+#app-description {
+    font-size: 14px;
+    margin-left: 32px;
+    margin-right: 32px;
+    font-weight: 300;
+}
+
+.badge-and-screenshot {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+#about-zood-location {
+    max-width: 600px;
+    text-align: center;
+    margin: auto;
+    font-size: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+#about-zood-location h2 {
+    margin-top: 32px;
+}
+
+#about-zood-location p {
+    margin-top: 16px;
+}
