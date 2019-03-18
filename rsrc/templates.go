@@ -5,6 +5,7 @@ import (
 	"io"
 	"io/ioutil"
 	"log"
+	"net/http"
 	"path/filepath"
 	"strconv"
 	"time"
@@ -19,7 +20,11 @@ var rsrcsPath string
 
 // Init ..
 func Init(resourcesPath string) error {
+	// var err error
 	rsrcsPath = resourcesPath
+	// if err != nil {
+	// 	return errors.Wrap(err, "failed to obtain absolute resources path")
+	// }
 	return loadTemplates()
 }
 
@@ -45,6 +50,11 @@ func loadTemplates() error {
 
 // ExecuteTemplate ...
 func ExecuteTemplate(tmplName string, w io.Writer, data map[string]interface{}) {
+	ExecuteTemplateCode(tmplName, w, data, http.StatusOK)
+}
+
+// ExecuteTemplateCode ...
+func ExecuteTemplateCode(tmplName string, w io.Writer, data map[string]interface{}, httpCode int) {
 	if Development {
 		if err := loadTemplates(); err != nil {
 			log.Printf("Error reloading templates: %v", err)

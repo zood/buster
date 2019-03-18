@@ -38,6 +38,9 @@ func main() {
 	r.HandleFunc("/about", aboutHandler).Methods(http.MethodGet)
 	r.HandleFunc("/products/location", locationAppHomeHandler).Methods(http.MethodGet)
 
+	r.HandleFunc("/verify-email", verifyEmailHandler).Methods(http.MethodGet)
+	r.HandleFunc("/disavow-email", disavowEmailHandler).Methods(http.MethodGet)
+
 	var hostAddress string
 	if *devMode {
 		hostAddress = fmt.Sprintf(":%d", *port)
@@ -52,6 +55,6 @@ func main() {
 		IdleTimeout:  120 * time.Second,
 	}
 
-	log.Printf("Starting app…")
+	log.Printf("Starting app on port %d…", *port)
 	log.Fatal(server.ListenAndServe())
 }

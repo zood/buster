@@ -8,6 +8,14 @@
 			"revision": "15a353a636720571d19e37b34a14499c3afa9991",
 			"branch": "master",
 			"notests": true
+		},
+		{
+			"importpath": "github.com/pkg/errors",
+			"repository": "https://github.com/pkg/errors",
+			"vcs": "git",
+			"revision": "27936f6d90f9c8e1145f11ed52ffffbfdb9e0af7",
+			"branch": "master",
+			"notests": true
 		}
 	]
 }
