@@ -27,6 +27,13 @@ func locationAppHomeHandler(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
+func mobileAppsPrivacyHandler(w http.ResponseWriter, r *http.Request) {
+	rsrc.ExecuteTemplate("privacy-mobile-apps.html", w, map[string]interface{}{
+		"title":   "Mobile Apps Privacy Policy | Zood",
+		"cssPath": "/css/privacy-mobile-apps.css",
+	})
+}
+
 func privacyHandler(w http.ResponseWriter, r *http.Request) {
 	rsrc.ExecuteTemplate("privacy.html", w, map[string]interface{}{
 		"title":   "Privacy Policy | Zood",
