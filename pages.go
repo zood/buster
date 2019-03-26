@@ -29,6 +29,7 @@ func locationAppHomeHandler(w http.ResponseWriter, r *http.Request) {
 		"cssPath":       "/css/location-home.css",
 		"googlePlayURL": l10n.GooglePlayURL,
 		"appStoreURL":   l10n.AppStoreURL,
+		"ogImage":       "/images/zood-pixel-3-xl-720px.jpg",
 	})
 }
 
