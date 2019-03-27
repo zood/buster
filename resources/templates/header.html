@@ -8,7 +8,7 @@
         <meta name="referrer" content="no-referrer">
         <meta property="og:title" content="{{ .title }}" />
         <meta property="og:site_name" content="Zood" />
-        <meta property="og:image" content={{ if .ogImage }}"{{ .ogImage }}"{{ else }}"/images/zood-logo.svg"{{ end }} />
+        <meta property="og:image" content="https://www.zood.xyz{{ if .ogImage }}{{ .ogImage }}{{ else }}/images/zood-logo.svg{{ end }}" />
         {{ if .ogDescription }}
         <meta property="og:description" content="{{ .ogDescription }}" />
         {{ end }}

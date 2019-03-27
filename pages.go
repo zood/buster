@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"net/http"
 
 	"zood.xyz/buster/l10n"
@@ -15,11 +16,14 @@ func aboutHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
+	log.Printf("request url: %v", r.RequestURI)
 	rsrc.ExecuteTemplate("home.html", w, map[string]interface{}{
-		"title":         "Zood",
-		"cssPath":       "/css/home.css",
-		"googlePlayURL": l10n.GooglePlayURL,
-		"appStoreURL":   l10n.AppStoreURL,
+		"title":              "Zood",
+		"cssPath":            "/css/home.css",
+		"googlePlayURL":      l10n.GooglePlayURL,
+		"appStoreURL":        l10n.AppStoreURL,
+		"companyDescription": l10n.CompanyDescription,
+		"ogDescription":      l10n.CompanyDescription,
 	})
 }
 
