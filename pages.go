@@ -29,11 +29,13 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 
 func locationAppHomeHandler(w http.ResponseWriter, r *http.Request) {
 	rsrc.ExecuteTemplate("location-home.html", w, map[string]interface{}{
-		"title":         "Zood Location | Zood",
-		"cssPath":       "/css/location-home.css",
-		"googlePlayURL": l10n.GooglePlayURL,
-		"appStoreURL":   l10n.AppStoreURL,
-		"ogImage":       "/images/zood-pixel-3-xl-720px.jpg",
+		"title":             "Zood Location | Zood",
+		"cssPath":           "/css/location-home.css",
+		"googlePlayURL":     l10n.GooglePlayURL,
+		"appStoreURL":       l10n.AppStoreURL,
+		"ogImage":           "/images/zood-location-icon-512.png",
+		"zoodLocationBlurb": l10n.ZoodLocationBlurb,
+		"ogDescription":     l10n.ZoodLocationBlurb,
 	})
 }
 
