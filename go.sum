@@ -1,0 +1,4 @@
+github.com/gorilla/mux v0.0.0-20190228181203-15a353a63672 h1:fTizlyYZUIFC4uIxHfvBI63fZvJZPbfSDKkl4WbdhqM=
+github.com/gorilla/mux v0.0.0-20190228181203-15a353a63672/go.mod h1:1lud6UwP+6orDFRuTfBEV8e9/aOM/c4fVVCaMa2zaAs=
+github.com/pkg/errors v0.0.0-20190227000051-27936f6d90f9 h1:dIsTcVF0w9viTLHXUEkDI7cXITMe+M/MRRM2MwisVow=
+github.com/pkg/errors v0.0.0-20190227000051-27936f6d90f9/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
