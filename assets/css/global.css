@@ -44,6 +44,22 @@ a {
 a:visited {
     color: #3c4466;
 }
+@media screen and (max-width: 640px) {
+     .container {
+        padding: 0 8px;
+    }
+    .container * {
+       width: auto !important;
+    }
+    .mobile-col {
+        width: 100% !important;
+        max-width: 100%;
+     }
+  }
+  
+  .container * {
+    max-width: 100%;
+}
 
 body {
     background: white;
@@ -69,6 +85,7 @@ height:120px;
 }
 .container {
     width: 1000px;
+    max-width: 100%;
     margin: 0 auto;
 }
 header .container {
@@ -101,7 +118,7 @@ header .container {
     text-decoration: none;
     font-weight: 800;
     font-family: 'Montserrat';
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 2.33;
     margin-left: 16px;
     margin-right: 0px;
@@ -137,7 +154,7 @@ hr {
 }
 
 footer {
-    font-size: 11px;
+    font-size: .6875rem;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
