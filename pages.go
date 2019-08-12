@@ -1,9 +1,9 @@
 package main
 
 import (
-	"log"
 	"net/http"
 
+	"zood.xyz/buster/constants"
 	"zood.xyz/buster/l10n"
 	"zood.xyz/buster/rsrc"
 )
@@ -16,26 +16,27 @@ func aboutHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
-	log.Printf("request url: %v", r.RequestURI)
+	tag := l10n.MatchLanguage(r)
 	rsrc.ExecuteTemplate("home.html", w, map[string]interface{}{
 		"title":              "Zood",
 		"cssPath":            "/css/home.css",
-		"googlePlayURL":      l10n.GooglePlayURL,
-		"appStoreURL":        l10n.AppStoreURL,
-		"companyDescription": l10n.CompanyDescription,
-		"ogDescription":      l10n.CompanyDescription,
+		"googlePlayURL":      constants.GooglePlayURL,
+		"appStoreURL":        constants.AppStoreURL,
+		"companyDescription": l10n.String(tag, l10n.CompanyDescriptionMsg),
+		"ogDescription":      l10n.String(tag, l10n.CompanyDescriptionMsg),
 	})
 }
 
 func locationAppHomeHandler(w http.ResponseWriter, r *http.Request) {
+	tag := l10n.MatchLanguage(r)
 	rsrc.ExecuteTemplate("location-home.html", w, map[string]interface{}{
 		"title":             "Zood Location | Zood",
 		"cssPath":           "/css/location-home.css",
-		"googlePlayURL":     l10n.GooglePlayURL,
-		"appStoreURL":       l10n.AppStoreURL,
+		"googlePlayURL":     constants.GooglePlayURL,
+		"appStoreURL":       constants.AppStoreURL,
 		"ogImage":           "/images/zood-location-icon-512.png",
-		"zoodLocationBlurb": l10n.ZoodLocationBlurb,
-		"ogDescription":     l10n.ZoodLocationBlurb,
+		"zoodLocationBlurb": l10n.String(tag, l10n.ZoodLocationBlurbMsg),
+		"ogDescription":     l10n.String(tag, l10n.ZoodLocationBlurbMsg),
 	})
 }
 

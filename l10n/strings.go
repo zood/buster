@@ -1,6 +1,28 @@
 package l10n
 
-const GooglePlayURL = "https://play.google.com/apps/testing/xyz.zood.george"
-const AppStoreURL = "https://testflight.apple.com/join/ySeXo9RA"
-const CompanyDescription = "Living a connected life does not require giving up your privacy. Our mission is to build products and services that are a delight to use, while also respecting your privacy."
-const ZoodLocationBlurb = "Share your location with your loved ones, while protecting your location from everyone else."
+import (
+	"log"
+
+	"golang.org/x/text/language"
+)
+
+// StringAsset is a key used to lookup a localized string
+type StringAsset int
+
+// Enumeration of all the localized strings in the app
+const (
+	CompanyDescriptionMsg StringAsset = iota
+	ZoodLocationBlurbMsg
+)
+
+// String returns a localized string of asset for the specific
+// acceptLangHdr
+func String(tag language.Tag, asset StringAsset) string {
+	s, ok := enStrings[asset]
+	if !ok {
+		log.Printf("WARNING: no string found for asset '%d'", asset)
+		return "<undefined>"
+	}
+
+	return s
+}
