@@ -1,16 +1,54 @@
 {{ template "header.html" . }}
 
 <section id="section1">
-        <img id="introducing-logo" src="/images/zood-logo-on-dark.svg" />
-        <p id="slogan">The privacy company.</p>
-        <p id="section1-explanation">{{ .companyDescription }}</p>
+       <div> <h1 id="slogan">The privacy company</h1>
+        <p id="section1-explanation">{{ .companyDescription }}</p></div>
+                <img id="introducing-logo" src="/images/website_header.svg" />
+
 </section>
 
-<section id="section-zood-location">
-    <div id="app-icon-and-name">
-        <img id="app-icon" src="/images/zood-location-icon-512.png" />
-        <p id="app-name">Zood Location</p>
+{{/* <section id="section-zood-location">
+<h3>Our Products</h3>
+    <div class="app-icon-and-name">
+    <div>
+        <img class="app-icon" src="/images/location_icon.svg" />
+        <p class="app-name">ASSISTANT</p>
     </div>
+        <div class="active">
+        <img class="app-icon" src="/images/location_icon.svg" />
+        <p class="app-name">Location</p>
+    </div>
+        <div>
+        <img class="app-icon" src="/images/location_icon.svg" />
+        <p class="app-name">STORAGE</p>
+    </div>
+    </div>
+
+</section> */}}
+<section class="feature">
+<img src="/images/onboarding_share_location.svg">
+<div>
+<h4>Share Your Location</h4>
+<p>With Zood Location, your family and loved ones can continuously share their location with each other, so you can make sure everyone is safe with a quick glance at your phone. No more having to text and call each person to find out where they are, and where they are headed.</p>
+</div>
+</section>
+<section class="feature">
+<img src="/images/onboarding_safe_secure.svg">
+<div>
+<h4>Safe and secure</h4>
+<p>Using end-to-end encryption your location is always protected. Zood encrypts your location before it leaves your phone so it can only be decrypted by the person you're sharing with. No companies can track you or sell your information.</p>
+</div>
+</section>
+<section class="feature">
+<img src="/images/onboarding_add_friends.svg">
+<div>
+<h4>Add only trusted friends</h4>
+<p>Build a friends list of family and friends that you trust. These will be the only ones who can access your location. This means you don't have to worry about rogue employees, hackers or nosy government going on fishing expeditions for your location.</p>
+</div>
+</section>
+
+<section id="section-zood-faq">
+
     <p id="app-description">Share your location with your loved ones, while protecting your location from everyone else. <a href="/products/location">Learn more…</a></p>
     <div id="screenshots">
         <div class="badge-and-screenshot">
@@ -23,5 +61,20 @@
         </div>
     </div>
 </section>
+
+<section id="section-zood-download">
+
+    <p id="app-description">Share your location with your loved ones, while protecting your location from everyone else. <a href="/products/location">Learn more…</a></p>
+    <div id="screenshots">
+        <div class="badge-and-screenshot">
+            <a href="{{ .googlePlayURL }}"><img class="badge" src="/images/gplay-badge.svg" /></a>
+        </div>
+        <div class="badge-and-screenshot">
+            <a href="{{ .appStoreURL }}"><img class="badge" src="/images/app-store-badge.svg" /></a>
+        </div>
+    </div>
+</section>
+
+
 
 {{ template "footer.html" . }}

@@ -1,19 +1,52 @@
 /* HOME PAGE */
 
 #section1 {
-    background-color: #3c4466;
-    padding: 64px;
+    background-color: #fff;
+    padding: 64px 0;
+    height: 620px;
     text-align: center;
-    color: white;
+    display: flex;
+    color: #2f2f2f;
+    align-items: center;
+    justify-items: space-around;
+    
 }
 
 #section1 > p {
     margin: 8px;
 }
+#section1 div {
+       
+    
+    flex-grow: 1;
+}
+#slogan {
+    width: 359px;
+    font-family: Montserrat;
+    font-size: 60px;
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -1.2px;
+    text-align: left;
+ 
+}
+
+#slogan::after {
+    margin: 24px 0;
+    width: 40px;
+    height: 10px;
+    border-radius: 5px;
+    display: block;
+    content: '';
+    background-color: #5cd2ff;
+}
+
 
 #section1 > #introducing-logo {
-    height: 64px;
-    width: auto;
+    height: 300px;
+    width: 432px;;
 }
 
 #section1 a {
@@ -21,15 +54,66 @@
 }
 
 #section1-explanation {
-    font-size: 14px;
+    width: 483px;
+    font-family: Lato;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.56;
+    letter-spacing: normal;
+    text-align: left;
+    color: #666666;
 }
 
 #section-zood-location {
     background-color: white;
     text-align: center;
-    margin-top: 32px;
+}
+#section-zood-location h3 {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    margin-bottom:69px;
+    letter-spacing: -0.6px;
+    text-align: center;
+    color: #666666;
+}
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom:30px;
 }
 
+.feature h4 {
+    font-family: Montserrat;
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+    text-align: left;
+    margin-bottom: 40px;
+    color: #333333;
+  }
+  .feature p {
+    width: 477px;
+    font-family: Lato;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.56;
+    letter-spacing: normal;
+    text-align: left;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    color: #666;
+  }
+  .feature img {
+      width: 300px;
+      height:auto;
+  }
 #screenshots {
     display: flex;
     flex-flow: row wrap;
@@ -53,26 +137,63 @@
     height: auto;
 }
 
-#app-icon {
-    height: 96px;
+.app-icon {
+    height: 120px;
+    display: block;
     width: auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 15px 50px 0 rgba(7, 29, 56, 0.15);
+    background-color: #ffffff;
+}
+.active .app-name::after {
+    margin: 24px auto;
+    width: 40px;
+    height: 10px;
+    border-radius: 5px;
+    display: block;
+
+    content: '';
+    background-color: #5cd2ff;
+}
+.active .app-name {
+color: #333;
 }
 
-#app-icon-and-name {
+.app-icon-and-name {
     vertical-align: middle;
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    align-items: start;
     margin-bottom: 4px;
 }
-
-#app-name {
-    font-size: 28px;
-    font-weight: 500;
-    margin-left: 8px;
+.app-icon-and-name > div {
+    text-align: center;
+    display:flex;
+     flex-direction: column;
+    width: 120px;
+    justify-items: center;
+    align-items: center;
 }
 
+.app-name {
+    font-family: Montserrat;
+    font-size: 25px;
+    margin-top: 48px;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.68;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ccc;
+}
+
+.app-name.active {
+    color: #333;
+}
 #app-description {
     font-size: 14px;
     margin-left: 32px;
