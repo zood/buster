@@ -1,7 +1,14 @@
 package l10n
 
 var enStrings = map[StringAsset]string{
+	ThePrivacyCompany:            "The Privacy Company",
 	CompanyDescriptionMsg:        "Living a connected life does not require giving up your privacy. Our mission is to build products and services that are a delight to use, while also respecting your privacy.",
+	ShareYourLocation:            "Share Your Location",
+	LocationDescriptionMsg:       "With Zood Location, your family and loved ones can continuously share their location with each other, so you can make sure everyone is safe with a quick glance at your phone. No more having to text and call each person to find out where they are, and where they are headed.",
+	SafeAndSecure:                "Safe and Secure",
+	SafeDescriptionMsg:           "Using end-to-end encryption your location is always protected. Zood encrypts your location before it leaves your phone so it can only be decrypted by the person you're sharing with. No companies can track you or sell your information.",
+	AddOnlyTrustedFriends:        "Add only trusted friends",
+	TrustedDescriptionMsg:        "Build a friends list of family and friends that you trust. These will be the only ones who can access your location. This means you don't have to worry about rogue employees, hackers or nosy government going on fishing expeditions for your location.",
 	ZoodLocationBlurbMsg:         "Share your location with your loved ones, while protecting your location from everyone else.",
 	ItsAboutPrivacy:              "It's about privacy.",
 	Really:                       "Really.",
@@ -14,4 +21,8 @@ var enStrings = map[StringAsset]string{
 	LotsofServicesAnswer:         "You don't have to trust Zood, because we use end-to-end encryption to protect your data. That means all your data is encrypted before it ever leaves your phone, so you don't have to trust us to not sell you out.",
 	WhenWillZoodLocationQuestion: "When will Zood Location be fully released?",
 	WhenWillZoodLocationAnswer:   "We plan to release the Android app in autumn 2019. Shortly after that we’ll prepare the launch for iOS.",
+	IfYouDontSurveilQuestion:     "If you don't surveil users to sell advertising, how do you make money?",
+	IfYouDontSurveilAnswer:       "By charging customers a modest fee to use Zood services.",
+	HowDoISubmitQuestion:         "How do I submit feedback regarding your services?",
+	HowDoISubmitAnswer:           "Each app has a built-in feedback form we’d love you to fill. Constructive feedback is always appreciated but a few kind words every now and then helps us stay motivated ;)",
 }
