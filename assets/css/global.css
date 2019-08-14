@@ -34,7 +34,7 @@
   }
 
   :root {
-    font-size: 16px;
+    font-size: 14px;
     }
 
 a {
@@ -49,7 +49,7 @@ a:visited {
         padding: 0 8px;
     }
     .container * {
-       width: auto !important;
+       width: auto;
     }
     .mobile-col {
         width: 100% !important;
@@ -153,11 +153,3 @@ hr {
     margin: 32px;
 }
 
-footer {
-    font-size: .6875rem;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-bottom: 16px;
-}

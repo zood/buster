@@ -2,7 +2,7 @@
 
 .hero-section {
   background-color: #fff;
-  padding: 64px 0;
+  padding: 4rem 0;
   height: 620px;
   text-align: center;
   display: flex;
@@ -12,8 +12,8 @@
 }
 
 .hero-section  p {
-  margin: 8px 0;
-  width: 482px;
+  margin: .5rem 0;
+  max-width: 482px;
   text-align: left;
   font-family: Lato;
   font-size: 1.125rem;
@@ -23,6 +23,7 @@
 }
 .hero-section div {
   flex-grow: 1;
+  padding: 0 1.5rem;
 }
 .slogan {
   width: 359px;
@@ -71,20 +72,20 @@
   font-family: Montserrat;
   font-size: 30px;
   font-weight: 800;
-  margin-bottom: 69px;
+  margin-bottom: 5rem;
   letter-spacing: -0.6px;
   text-align: center;
   color: #666666;
 }
 .feature {
   display: flex;
-  margin-top: 55px;
+  margin-top: 3.75rem;
   align-items: flex-end;
   justify-content: space-between;
 }
 
 .feature > div {
-  margin: 0 23px;
+  padding: 0 1.5rem;
   justify-items: end;
   flex-direction: column;
 }
@@ -98,11 +99,12 @@
   font-weight: 800;
   letter-spacing: -0.7px;
   text-align: left;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
   color: #333333;
 }
 .buttons {
-    margin-top:120px;
+    margin-top:7.5rem;
+    margin-bottom: 6.25rem;
 }
 .buttons p {
     font-family: Montserrat;
@@ -117,28 +119,30 @@
   line-height: 1.56;
   letter-spacing: normal;
   text-align: left;
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
   color: #666;
 }
 .feature img {
   width: 300px;
   height: auto;
 }
-
+.qa-block  {
+  padding: 0 1.5rem;
+}
 .qa-block ul {
   display: flex;
   list-style: none;
 }
 .qa-block ul li:first-child {
-  margin-right: 32px;
-  margin-bottom: 16px;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
   color: #5cd1ff;
   font-family: Montserrat;
   font-size: 1.25rem;
   font-weight: 800;
 }
 .qa-block ul.answer {
-  margin-bottom: 48px;
+  margin-bottom: 3.125rem;
   line-height: 1.56;
   color: #666666;
 }
@@ -155,7 +159,7 @@
   color: #333333;
 }
 .qa-wrapper {
-  margin-top: 89px;
+  margin-top: 5.625rem;
 }
 .copyright {
     background-color: #222222;
@@ -177,9 +181,9 @@
 }
 
 #screenshots img {
-  margin-left: 32px;
-  margin-right: 32px;
-  margin-top: 32px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 2rem;
 }
 
 .badge {
@@ -187,7 +191,7 @@
   height: auto;
 }
 .privacy-policy {
-    padding: 56px 0;
+    padding: 3.75rem 0;
     background-color: #333333;width:100%;
 }
 .privacy-policy h5 {
@@ -214,13 +218,13 @@
   height: 120px;
   display: block;
   width: auto;
-  padding: 20px;
+  padding: 1.25rem;
   border-radius: 20px;
   box-shadow: 0px 15px 50px 0 rgba(7, 29, 56, 0.15);
   background-color: #ffffff;
 }
 .active .app-name::after {
-  margin: 24px auto;
+  margin: 1.5rem auto;
   width: 40px;
   height: 10px;
   border-radius: 5px;
@@ -238,7 +242,7 @@
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: start;
-  margin-bottom: 4px;
+  margin-bottom: .25rem;
 }
 .app-icon-and-name > div {
   text-align: center;
@@ -252,13 +256,10 @@
 .app-name {
   font-family: Montserrat;
   font-size: 1.5rem;
-  margin-top: 48px;
+  margin-top: 3.125rem;
   text-transform: uppercase;
   font-weight: 800;
-  font-style: normal;
-  font-stretch: normal;
   line-height: 1.68;
-  letter-spacing: normal;
   text-align: center;
   color: #ccc;
 }
@@ -268,8 +269,8 @@
 }
 #app-description {
   font-size: .875rem;
-  margin-left: 32px;
-  margin-right: 32px;
+  margin-left: 2rem;
+  margin-right: 2rem;
   font-weight: 300;
 }
 
@@ -280,6 +281,10 @@
 }
 
 @media screen and (max-width: 640px) {
+  .feature img {
+padding: 0 1rem;
+padding-bottom: 1rem;
+  }
     #introducing-logo {
         order: -1;
     }

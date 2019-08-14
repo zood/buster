@@ -17,10 +17,10 @@
         <header>
         <div class="container">  <a id="header-logo" href="/"><img  src="/images/zood-logo.svg" /></a>
             <div id="menu">
-                <a class="item active" href="/">Home</a>
-                <a class="item" href="/news">News</a>
-                <a class="item" href="/about">About</a>
-                 <a class="item" href="/contact">Contact</a>
+                <a class="item {{ if .activeHome }}{{ .activeHome }}{{ end }}" href="/">Home</a>
+                <a class="item {{ if .activeNews }}{{ .activeNews }}{{ end }}" href="/news">News</a>
+                <a class="item {{ if .activeAbout }}{{ .activeAbout }}{{ end }}" href="/about">About</a>
+                 <a class="item {{ if .activeContact }}{{ .activeContact }}{{ end }}" href="/contact">Contact</a>
             </div></div>
           
         </header>
