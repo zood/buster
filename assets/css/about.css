@@ -1,48 +1,19 @@
-#main {
-    padding-top: 64px;
-    padding-left: 16px;
-    padding-right: 16px;
-    margin: 0 auto;
-    max-width: 600px;
-    text-align: center;
-    font-size: 16px;
+.container.about {
+    padding-top: 2.5rem;
+}
+.pop {
+    color:#5cd1ff;
+}
+.about .feature img {width: 250px;}
+.about .feature {
+    margin-top: 7.5rem;
+    align-items: center;
+    justify-content: start;
+
 }
 
-.left-align {
-    text-align: left;
-}
-
-#main p {
-    margin-top: 16px;
-}
-
-#main ul {
-    margin-top: 16px;
-}
-
-section, #faq {
-    padding-top: 32px;
-    padding-left: 16px;
-    padding-right: 16px;
-    margin-top: 32px;
-    max-width: 600px;
-    margin: 0 auto;
-    font-size: 16px;
-}
-
-#faq h2 {
-    text-align: center;
-}
-
-#questions {
-    margin-top: 24px;
-}
-
-.question {
-    margin-top: 8px;
-    font-weight: 700;
-}
-
-.answer {
-    margin-bottom: 16px;
+.about .feature .img {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
 }

@@ -1,9 +1,11 @@
 {{ template "header.html" . }}
 
 <section class="feature">
-<img class="mobile-col" src="/images/onboarding_share_location.svg">
+<div class="img"><img class="mobile-col" src="/images/website_about_security.svg" alt="{{.ItsAboutPrivacy}}"></div>
+
 <div>
-    <h4>It's about privacy. Really.</h4>
+    <h4>{{.ItsAboutPrivacy}}  <div class="pop">{{ .Really }}</div></h4>
+  
     <p>{{ .AboutPrivacyMsg }}</p>
 </div>
 </section>
@@ -11,16 +13,16 @@
 
 
 <section class="feature">
-<img class="mobile-col" src="/images/onboarding_share_location.svg">
+<div class="img"><img class="mobile-col" src="/images/website_about_different.svg" alt="{{.ZoodIsDifferent}}"></div>
 <div>
-    <h4>Zood is different</h4>
+    <h4>{{.ZoodIsDifferent}}</h4>
     <p>{{ .AboutDifferentMsg }}</p>
 </div>
 </section>
 <section class="feature">
-<img class="mobile-col" src="/images/onboarding_safe_secure.svg">
+<div class="img"><img class="mobile-col" src="/images/website_about_encryption.svg" alt="{{.DidWeMentionEncryption}}"></div>
 <div>
-    <h4>Did we mention the encryption?</h4>
+    <h4>{{.DidWeMentionEncryption}}</h4>
     <p>{{ .AboutEncryptionMsg }}</p>
 </div>
 </section>
@@ -31,12 +33,12 @@
     <ul class="question">
         <li>Q</li>
         <li>
-            <h5>Lots of services say they are "secure". How can I trust Zood?</h5>
+            <h5>{{.LotsofServicesQuestion}}</h5>
         </li>
     </ul>
     <ul class="answer">
         <li>A</li>
-        <li>You don't have to trust Zood, because we use end-to-end encryption to protect your data. That means all your data is encrypted before it ever leaves your phone, so you don't have to trust us to not sell you out.</li>
+        <li>{{.LotsofServicesAnswer}}</li>
     </ul>
 </div>
 <div class="qa-block">
@@ -44,12 +46,12 @@
     <ul class="question">
         <li>Q</li>
         <li>
-            <h5>When will Zood Location be fully released?</h5>
+            <h5>{{.WhenWillZoodLocationQuestion}}</h5>
         </li>
     </ul>
     <ul class="answer">
         <li>A</li>
-        <li>We plan to release the Android app in autumn 2019. Shortly after that we’ll prepare the launch for iOS.</li>
+        <li>{{.WhenWillZoodLocationAnswer}}</li>
     </ul>
 </div>
 </section>
