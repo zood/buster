@@ -2,8 +2,8 @@
 
 .hero-section {
   background-color: #fff;
-  padding: 4rem 0;
-  height: 620px;
+  padding: 2rem 0;
+  min-height: 50vh;
   text-align: center;
   display: flex;
   color: #2f2f2f;
@@ -15,7 +15,7 @@
   margin: .5rem 0;
   max-width: 482px;
   text-align: left;
-  font-family: Lato;
+  font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 1.125rem;
   line-height: 1.56;
   text-align: left;
@@ -27,7 +27,7 @@
 }
 .slogan {
   width: 359px;
-  font-family: Montserrat;
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 3.75rem;
   font-weight: 800;
   font-style: normal;
@@ -38,7 +38,7 @@
 }
 
 .slogan::after {
-  margin: 24px 0;
+  margin: 1.5rem 0;
   width: 40px;
   height: 10px;
   border-radius: 5px;
@@ -58,7 +58,7 @@
 
 .hero-section-explanation {
   width: 483px;
-  font-family: Lato;
+  font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.56;
   text-align: left;
   color: #666666;
@@ -69,7 +69,7 @@
   text-align: center;
 }
 #section-zood-location h3 {
-  font-family: Montserrat;
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 30px;
   font-weight: 800;
   margin-bottom: 5rem;
@@ -79,13 +79,13 @@
 }
 .feature {
   display: flex;
+  padding: 0 1.5rem;
   margin-top: 3.75rem;
   align-items: flex-end;
   justify-content: space-between;
 }
 
 .feature > div {
-  padding: 0 1.5rem;
   justify-items: end;
   flex-direction: column;
 }
@@ -93,7 +93,7 @@
   flex-direction: row-reverse;
 }
 .feature h4 {
-  font-family: Montserrat;
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 2.25rem;
   flex-grow: 2;
   font-weight: 800;
@@ -103,19 +103,20 @@
   color: #333333;
 }
 .buttons {
-    margin-top:7.5rem;
     margin-bottom: 6.25rem;
 }
 .buttons p {
-    font-family: Montserrat;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
+    margin-bottom: 1.875rem;
     text-align: center;
     color: #333333;
 }
 .feature p {
   width: 477px;
-  font-family: Lato;
+  
+  font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.56;
   letter-spacing: normal;
   text-align: left;
@@ -137,7 +138,7 @@
   margin-right: 2rem;
   margin-bottom: 1rem;
   color: #5cd1ff;
-  font-family: Montserrat;
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 1.25rem;
   font-weight: 800;
 }
@@ -153,20 +154,21 @@
   width: 905px;
 }
 .qa-block h5 {
-  font-family: Montserrat;
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin-bottom: .9375rem;
   font-size: 1.25rem;
   font-weight: 800;
   color: #333333;
 }
 .qa-wrapper {
-  margin-top: 5.625rem;
+  margin: 5.625rem 0;
 }
 .copyright {
     background-color: #222222;
-    font-family: Lato;
+    font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: .875rem;
     line-height: 1.67;
-    padding: 36px 0;
+    padding: 2.25rem 0;
     letter-spacing: normal;
     text-align: left;
     color: #666666;
@@ -195,7 +197,7 @@
     background-color: #333333;width:100%;
 }
 .privacy-policy h5 {
-    font-family: Montserrat;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1rem;
     font-weight: bold;
     color: #ffffff;
@@ -254,7 +256,7 @@
 }
 
 .app-name {
-  font-family: Montserrat;
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 1.5rem;
   margin-top: 3.125rem;
   text-transform: uppercase;
@@ -295,3 +297,11 @@ padding-bottom: 1rem;
     flex-wrap: wrap;
   }
 }
+
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  .feature > div {
+    width: 50%;
+    max-width: 40ch;
+  }
+}
+

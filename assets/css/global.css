@@ -67,20 +67,21 @@ body {
     font-size: 1.25rem;
     font-weight: 400;
     color: #46585e;
-    margin-top: 120px;
+    margin-top: 7.5rem;
 }
 
 /* HEADER */
 
 header {
     width: 100%;
-    background-color: white;
-height:120px;
+    background-color:rgba(255,255,255,.9);
+    backdrop-filter: blur(10px);
+height:7.5rem;
     position: fixed;
     display: flex;
     justify-items: center;
     top: 0;
-    padding: 16px;
+    padding: 1rem;
     overflow: hidden;
 }
 .container {
@@ -120,10 +121,12 @@ header .container {
     font-family: 'Montserrat';
     font-size: 1.125rem;
     line-height: 2.33;
-    margin-left: 16px;
+    margin-left: 1rem;
     margin-right: 0px;
     transition: 0.1s;
 }
+
+
 
 #menu > .item::after {
     width: 18px;
@@ -144,12 +147,20 @@ header .container {
     background-color: #5cd2ff;
     transition: .3s all;
 }
-
+#menu > .active.item { 
+    color: #444;
+}
 #menu > .item:hover {
 color: #333;}
 
 hr {
     border-top: 1px solid #3c4466;
-    margin: 32px;
+    margin: 2rem;
 }
 
+.inline-svg {
+    display: inline-flex;
+    align-self: center;
+    height: 1.25rem;
+    margin: 0 .25rem;
+}
