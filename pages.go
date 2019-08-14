@@ -10,9 +10,9 @@ import (
 func aboutHandler(w http.ResponseWriter, r *http.Request) {
 	rsrcs := resourcesFromContext(r.Context())
 	rsrcs.ExecuteTemplate("about.html", w, map[string]interface{}{
-		"title":       "About | Zood",
-		"activeAbout": "active",
-		"cssPath":     "/css/about.css",
+		"title":        "About | Zood",
+		"activeHeader": "about",
+		"cssPath":      "/css/about.css",
 	})
 }
 
@@ -22,7 +22,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	rsrcs.ExecuteTemplate("home.html", w, map[string]interface{}{
 		"title":              "Zood",
 		"cssPath":            "/css/home.css",
-		"activeHome":         "active",
+		"activeHeader":       "home",
 		"googlePlayURL":      constants.GooglePlayURL,
 		"appStoreURL":        constants.AppStoreURL,
 		"companyDescription": l10n.String(tag, l10n.CompanyDescriptionMsg),
@@ -38,7 +38,6 @@ func locationAppHomeHandler(w http.ResponseWriter, r *http.Request) {
 		"cssPath":           "/css/location-home.css",
 		"googlePlayURL":     constants.GooglePlayURL,
 		"appStoreURL":       constants.AppStoreURL,
-		"activeLocation":    "active",
 		"ogImage":           "/images/zood-location-icon-512.png",
 		"zoodLocationBlurb": l10n.String(tag, l10n.ZoodLocationBlurbMsg),
 		"ogDescription":     l10n.String(tag, l10n.ZoodLocationBlurbMsg),
