@@ -1,27 +1,59 @@
 {{ template "header.html" . }}
 
-<section id="main">
-    <h1>About Zood</h1>
-
-    <p id="launch-statement">Zood launched in 2019 and is building apps and services for people that let them live a connected life without having to sacrifice their privacy. Most internet companies make money by collecting information about you, then selling that information and/or using it to sell your eyeballs and sanity to the highest bidder.</p>
-    
-    <p>Zood is different. We don't do any of that. Our mission is simple: Build apps and services that help people live their life and charge a fair price for it. Don't treat our users like eyeballs for staring at ads.</p>
-
-    <p>Further, Zood backs up this promise with end-to-end encryption, so you don't even have to trust us to not sell you out. Our first product, Zood Location, is now available and we're hoping to make more privacy preserving/enhancing services in the future.</p>
-
+<section class="feature">
+<img class="mobile-col" src="/images/onboarding_share_location.svg">
+<div>
+    <h4>It's about privacy. Really.</h4>
+    <p>{{ .AboutPrivacyMsg }}</p>
+</div>
 </section>
 
-<section id="faq">
-    <h2>Frequently Asked Questions</h2>
-    <div id="questions">
-        <p class="question">If you don't surveil users to sell advertising, how do you make money?</p>
-        <p class="answer">By charging customers a modest fee to use Zood services.</p>
 
-        <p class="question">Another question?</p>
-        <p class="answer">Another answer</p>
 
-        <p>Have a question that's not answered here? Just <a href="mailto:hello@zood.xyz">ask us via email</a> and we'll get back to you as soon as possible.</p>
-    </div>
+<section class="feature">
+<img class="mobile-col" src="/images/onboarding_share_location.svg">
+<div>
+    <h4>Zood is different</h4>
+    <p>{{ .AboutDifferentMsg }}</p>
+</div>
 </section>
+<section class="feature">
+<img class="mobile-col" src="/images/onboarding_safe_secure.svg">
+<div>
+    <h4>Did we mention the encryption?</h4>
+    <p>{{ .AboutEncryptionMsg }}</p>
+</div>
+</section>
+
+<section class="qa-wrapper">
+<div class="qa-block">
+
+    <ul class="question">
+        <li>Q</li>
+        <li>
+            <h5>Lots of services say they are "secure". How can I trust Zood?</h5>
+        </li>
+    </ul>
+    <ul class="answer">
+        <li>A</li>
+        <li>You don't have to trust Zood, because we use end-to-end encryption to protect your data. That means all your data is encrypted before it ever leaves your phone, so you don't have to trust us to not sell you out.</li>
+    </ul>
+</div>
+<div class="qa-block">
+
+    <ul class="question">
+        <li>Q</li>
+        <li>
+            <h5>When will Zood Location be fully released?</h5>
+        </li>
+    </ul>
+    <ul class="answer">
+        <li>A</li>
+        <li>We plan to release the Android app in autumn 2019. Shortly after that we’ll prepare the launch for iOS.</li>
+    </ul>
+</div>
+</section>
+
+
 
 {{ template "footer.html" . }}

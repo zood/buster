@@ -13,6 +13,9 @@ type StringAsset int
 const (
 	CompanyDescriptionMsg StringAsset = iota
 	ZoodLocationBlurbMsg
+	AboutPrivacyMsg
+	AboutDifferentMsg
+	AboutEncryptionMsg
 )
 
 // String returns a localized string matching the language
