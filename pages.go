@@ -5,11 +5,11 @@ import (
 
 	"zood.xyz/buster/constants"
 	"zood.xyz/buster/l10n"
-	"zood.xyz/buster/rsrc"
 )
 
 func aboutHandler(w http.ResponseWriter, r *http.Request) {
-	rsrc.ExecuteTemplate("about.html", w, map[string]interface{}{
+	rsrcs := resourcesFromContext(r.Context())
+	rsrcs.ExecuteTemplate("about.html", w, map[string]interface{}{
 		"title":   "About | Zood",
 		"cssPath": "/css/about.css",
 	})
@@ -17,7 +17,8 @@ func aboutHandler(w http.ResponseWriter, r *http.Request) {
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
 	tag := l10n.MatchLanguage(r)
-	rsrc.ExecuteTemplate("home.html", w, map[string]interface{}{
+	rsrcs := resourcesFromContext(r.Context())
+	rsrcs.ExecuteTemplate("home.html", w, map[string]interface{}{
 		"title":              "Zood",
 		"cssPath":            "/css/home.css",
 		"googlePlayURL":      constants.GooglePlayURL,
@@ -29,7 +30,8 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 
 func locationAppHomeHandler(w http.ResponseWriter, r *http.Request) {
 	tag := l10n.MatchLanguage(r)
-	rsrc.ExecuteTemplate("location-home.html", w, map[string]interface{}{
+	rsrcs := resourcesFromContext(r.Context())
+	rsrcs.ExecuteTemplate("location-home.html", w, map[string]interface{}{
 		"title":             "Zood Location | Zood",
 		"cssPath":           "/css/location-home.css",
 		"googlePlayURL":     constants.GooglePlayURL,
@@ -41,14 +43,21 @@ func locationAppHomeHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func mobileAppsPrivacyHandler(w http.ResponseWriter, r *http.Request) {
-	rsrc.ExecuteTemplate("privacy-mobile-apps.html", w, map[string]interface{}{
+	rsrcs := resourcesFromContext(r.Context())
+	rsrcs.ExecuteTemplate("privacy-mobile-apps.html", w, map[string]interface{}{
 		"title":   "Mobile Apps Privacy Policy | Zood",
 		"cssPath": "/css/privacy-mobile-apps.css",
 	})
 }
 
+func notFoundHandler(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(http.StatusNotFound)
+	w.Write([]byte("page not found"))
+}
+
 func privacyHandler(w http.ResponseWriter, r *http.Request) {
-	rsrc.ExecuteTemplate("privacy.html", w, map[string]interface{}{
+	rsrcs := resourcesFromContext(r.Context())
+	rsrcs.ExecuteTemplate("privacy.html", w, map[string]interface{}{
 		"title":   "Privacy Policy | Zood",
 		"cssPath": "/css/privacy.css",
 	})

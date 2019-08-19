@@ -8,16 +8,15 @@ import (
 	"runtime"
 
 	"zood.xyz/buster/mailgun"
-
-	"zood.xyz/buster/rsrc"
+	"zood.xyz/buster/resources"
 )
 
-func internalError(w http.ResponseWriter, err error) {
+func internalError(w http.ResponseWriter, rsrcs *resources.Resources, err error) {
 	data := map[string]interface{}{
 		"title":   "Server Error | Zood",
 		"cssPath": "/css/server-error.css",
 	}
-	rsrc.ExecuteTemplateCode("server-error.html", w, data, http.StatusInternalServerError)
+	rsrcs.ExecuteTemplateCode("server-error.html", w, data, http.StatusInternalServerError)
 	if err != nil {
 		_, file, line, ok := runtime.Caller(1)
 		if !ok {
