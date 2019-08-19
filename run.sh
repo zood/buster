@@ -3,5 +3,5 @@
 set -e
 
 go build -i -o buster
-./buster --resources ./resources/ \
+./buster --resources ./assets/ \
          --dev true

@@ -15,8 +15,8 @@ const (
 	ZoodLocationBlurbMsg
 )
 
-// String returns a localized string of asset for the specific
-// acceptLangHdr
+// String returns a localized string matching the language
+// represented by tag
 func String(tag language.Tag, asset StringAsset) string {
 	s, ok := enStrings[asset]
 	if !ok {

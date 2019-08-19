@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "slug": "introducing-zood-the-privacy-company",
+        "title": "Introducing, Zood — The Privacy Company",
+        "intro": "These are the opening words of the post. It doesn't say everything."
+    },
+    {
+        "id": 2,
+        "slug": "post-2-slug",
+        "title": "Title of post # 2",
+        "intro": "Teaser text for post 2"
+    }
+]

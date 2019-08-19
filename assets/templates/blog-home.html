@@ -1,0 +1,11 @@
+{{ template "header.html" . }}
+
+{{ range .posts }}
+
+<p><a href="/blog/{{.ID}}/{{.Slug}}">{{.Title}}</a></p>
+<p>{{.Intro}}</p>
+<p><a href="/blog/{{.ID}}/{{.Slug}}">Read more…</a></p>
+
+{{ end }}
+
+{{ template "footer.html" . }}

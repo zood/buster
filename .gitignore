@@ -1,2 +1,4 @@
 buster
 *.DS_Store
+.stignore
+.stfolder
