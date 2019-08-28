@@ -16,14 +16,14 @@ func aboutHandler(w http.ResponseWriter, r *http.Request) {
 		"ItsAboutPrivacy":          l10n.String(tag, l10n.ItsAboutPrivacy),
 		"Really":                   l10n.String(tag, l10n.Really),
 		"ZoodIsDifferent":          l10n.String(tag, l10n.ZoodIsDifferent),
-		"DidWeMentionEncryption":   l10n.String(tag, l10n.DidWeMentionEncryption),
+		"DidWeMentionEncryption":   l10n.String(tag, l10n.DidWeMentionTheEncryptionInterrogative),
 		"AboutPrivacyMsg":          l10n.String(tag, l10n.AboutPrivacyMsg),
 		"AboutDifferentMsg":        l10n.String(tag, l10n.AboutDifferentMsg),
 		"AboutEncryptionMsg":       l10n.String(tag, l10n.AboutEncryptionMsg),
-		"IfYouDontSurveilQuestion": l10n.String(tag, l10n.IfYouDontSurveilQuestion),
-		"IfYouDontSurveilAnswer":   l10n.String(tag, l10n.IfYouDontSurveilAnswer),
-		"HowDoISubmitQuestion":     l10n.String(tag, l10n.HowDoISubmitQuestion),
-		"HowDoISubmitAnswer":       l10n.String(tag, l10n.HowDoISubmitAnswer),
+		"IfYouDontSurveilQuestion": l10n.String(tag, l10n.IfYouDontSurveilQuestionMsg),
+		"IfYouDontSurveilAnswer":   l10n.String(tag, l10n.IfYouDontSurveilAnswerMsg),
+		"HowDoISubmitQuestion":     l10n.String(tag, l10n.HowDoISubmitQuestionMsg),
+		"HowDoISubmitAnswer":       l10n.String(tag, l10n.HowDoISubmitAnswerMsg),
 		"cssPath":                  "/css/about.css",
 	})
 }
@@ -47,10 +47,10 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 		"TrustedDescriptionMsg":        l10n.String(tag, l10n.TrustedDescriptionMsg),
 		"ZoodLocationBlurbMsg":         l10n.String(tag, l10n.ZoodLocationBlurbMsg),
 		"ogDescription":                l10n.String(tag, l10n.CompanyDescriptionMsg),
-		"LotsofServicesQuestion":       l10n.String(tag, l10n.LotsofServicesQuestion),
-		"LotsofServicesAnswer":         l10n.String(tag, l10n.LotsofServicesAnswer),
-		"WhenWillZoodLocationQuestion": l10n.String(tag, l10n.WhenWillZoodLocationQuestion),
-		"WhenWillZoodLocationAnswer":   l10n.String(tag, l10n.WhenWillZoodLocationAnswer),
+		"LotsofServicesQuestion":       l10n.String(tag, l10n.LotsOfServicesSecureQuestionMsg),
+		"LotsofServicesAnswer":         l10n.String(tag, l10n.LotsOfServicesSecureAnswerMsg),
+		"WhenWillZoodLocationQuestion": l10n.String(tag, l10n.WhenZoodLocationReleasedQuestionMsg),
+		"WhenWillZoodLocationAnswer":   l10n.String(tag, l10n.WhenZoodLocationReleasedAnswerMsg),
 	})
 }
 

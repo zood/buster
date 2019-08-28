@@ -25,16 +25,16 @@ const (
 	AboutPrivacyMsg
 	ZoodIsDifferent
 	AboutDifferentMsg
-	DidWeMentionEncryption
+	DidWeMentionTheEncryptionInterrogative
 	AboutEncryptionMsg
-	LotsofServicesQuestion
-	LotsofServicesAnswer
-	WhenWillZoodLocationQuestion
-	WhenWillZoodLocationAnswer
-	IfYouDontSurveilQuestion
-	IfYouDontSurveilAnswer
-	HowDoISubmitQuestion
-	HowDoISubmitAnswer
+	LotsOfServicesSecureQuestionMsg
+	LotsOfServicesSecureAnswerMsg
+	WhenZoodLocationReleasedQuestionMsg
+	WhenZoodLocationReleasedAnswerMsg
+	IfYouDontSurveilQuestionMsg
+	IfYouDontSurveilAnswerMsg
+	HowDoISubmitQuestionMsg
+	HowDoISubmitAnswerMsg
 )
 
 // String returns a localized string matching the language
