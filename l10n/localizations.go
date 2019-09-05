@@ -25,4 +25,6 @@ var enStrings = map[StringAsset]string{
 	IfYouDontSurveilAnswerMsg:              "By charging customers a modest fee to use Zood services.",
 	HowDoISubmitQuestionMsg:                "How do I submit feedback regarding your services?",
 	HowDoISubmitAnswerMsg:                  "Each app has a built-in feedback form we’d love you to fill. Constructive feedback is always appreciated but a few kind words every now and then helps us stay motivated ;)",
+	getInTouchWithUs:                       "Get in touch with us!",
+	getInTouchWithUsMsg:                    "We’d like to hear what you have to say! Feedback and improvement suggestions will help us develop and make better products for you. Fill in the form below or send us an email at hello@zoodxyz.com.",
 }

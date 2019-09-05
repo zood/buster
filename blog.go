@@ -12,15 +12,17 @@ import (
 func blogArchivesHandler(w http.ResponseWriter, r *http.Request) {
 	rsrcs := resourcesFromContext(r.Context())
 	rsrcs.ExecuteTemplate("blog-archive.html", w, map[string]interface{}{
-		"title": "Blog Archive | Zood",
+		"title":        "Blog Archive | Zood",
+		"activeHeader": "news",
 	})
 }
 
 func blogHomeHandler(w http.ResponseWriter, r *http.Request) {
 	rsrcs := resourcesFromContext(r.Context())
 	rsrcs.ExecuteTemplate("blog-home.html", w, map[string]interface{}{
-		"posts": rsrcs.Posts(5, 0),
-		"title": "Blog | Zood",
+		"posts":        rsrcs.Posts(5, 0),
+		"title":        "Blog | Zood",
+		"activeHeader": "news",
 	})
 }
 
@@ -62,7 +64,8 @@ func blogPostHandler(w http.ResponseWriter, r *http.Request) {
 	// Just serve the post html
 	rsrcs.ExecuteTemplate("post-single.html", w, map[string]interface{}{
 		// Convert the post body into a template.HTML so it doesn't get escaped
-		"body":  template.HTML(rsrcs.PostBody(postID)),
-		"title": fmt.Sprintf("%s | Zood Blog", post.Title),
+		"body":         template.HTML(rsrcs.PostBody(postID)),
+		"title":        fmt.Sprintf("%s | Zood Blog", post.Title),
+		"activeHeader": "news",
 	})
 }

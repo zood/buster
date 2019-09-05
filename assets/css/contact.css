@@ -1,0 +1,83 @@
+.form-group {
+  margin-bottom: 3rem;
+}
+.contact img {
+  max-width: 250px;
+}
+.contact .img {
+  text-align: center;
+  width: 100%;
+  margin:auto;
+}
+.form-group label {
+  display: block;
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.form-group input,
+.form-group textarea {
+  font-size: 1.25rem;
+  padding: 1rem;
+  width: 100%;
+  color: #ccc;
+  line-height: 1.4;
+  border-radius: 0.75rem;
+  width: 500px;
+  max-width: 100%;
+  border: solid 2px #ccc;
+}
+.form-group button {
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.25rem;
+  padding: 0.5rem 2rem;
+  font-weight: 800;
+  line-height: 2;
+  text-transform: uppercase;
+  background: #5cd1ff;
+  color: #fff;
+  border-radius: 0.325rem;
+}
+.contact .feature {
+  margin-top: 15rem;
+  margin-bottom: 6.25rem;
+
+}
+.contact .form {
+  margin-bottom: 11.25rem;
+}
+.contact .feature p {
+  width: 618px;
+}
+@media screen and (max-width: 640px) {
+    .form-group button,.form-group input,
+    .form-group textarea {
+    width: 100%;
+    display:block;
+    }
+  .contact .form {
+    padding: 0 0.5rem;
+  }
+  .contact img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+   .contact .feature > div {
+    width: auto;
+    max-width: auto;
+    }
+  .contact .form {
+    padding: 0 0.5rem;
+  }
+  .contact img {
+    width: 100%;
+    max-width: 100%;
+  }
+}

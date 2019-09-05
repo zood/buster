@@ -71,9 +71,9 @@ func locationAppHomeHandler(w http.ResponseWriter, r *http.Request) {
 func mobileAppsPrivacyHandler(w http.ResponseWriter, r *http.Request) {
 	rsrcs := resourcesFromContext(r.Context())
 	rsrcs.ExecuteTemplate("privacy-mobile-apps.html", w, map[string]interface{}{
-		"title":               "Mobile Apps Privacy Policy | Zood",
-		"activePrivacyMobile": "active",
-		"cssPath":             "/css/privacy-mobile-apps.css",
+		"title":        "Mobile Apps Privacy Policy | Zood",
+		"activeHeader": "privacymobile",
+		"cssPath":      "/css/privacy-mobile-apps.css",
 	})
 }
 
@@ -85,8 +85,20 @@ func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 func privacyHandler(w http.ResponseWriter, r *http.Request) {
 	rsrcs := resourcesFromContext(r.Context())
 	rsrcs.ExecuteTemplate("privacy.html", w, map[string]interface{}{
-		"title":         "Privacy Policy | Zood",
-		"activePrivacy": "active",
-		"cssPath":       "/css/privacy.css",
+		"title":        "Privacy Policy | Zood",
+		"activeHeader": "privacy",
+		"cssPath":      "/css/privacy.css",
+	})
+}
+
+func contactHandler(w http.ResponseWriter, r *http.Request) {
+	// tag := l10n.MatchLanguage(r)
+	rsrcs := resourcesFromContext(r.Context())
+	rsrcs.ExecuteTemplate("contact.html", w, map[string]interface{}{
+		"title":        "Contact | Zood",
+		"activeHeader": "contact",
+		"cssPath":      "/css/contact.css",
+		// "getInTouchWithUs":    l10n.String(tag, l10n.getInTouchWithUs),
+		// "getInTouchWithUsMsg": l10n.String(tag, l10n.getInTouchWithUsMsg),
 	})
 }

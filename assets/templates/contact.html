@@ -1,0 +1,33 @@
+{{ template "header.html" . }}
+
+<section class="feature">
+    <div class="img"><img class="mobile-col" src="/images/website_contact.svg" alt="Get in touch with us"></div>
+
+    <div>
+        <h4>Get in touch with us!</h4>
+
+        <p>We’d like to hear what you have to say! Feedback and improvement suggestions will help us develop and make better products for you. Fill in the form below or send us an email at hello@zoodxyz.com.</p>
+
+    </div>
+</section>
+<section class="form">
+
+        <form>
+            <div class="form-group">
+                <label>Name</label>
+                <input placeholder="John Doe" type="text" name="name">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="john@doe.com" name="email">
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea rows="6" placeholder="What's on your mind?" type="text" name="name"></textarea>
+            </div>
+               <div class="form-group">
+              <button type="submit">Send</button>
+            </div>
+        </form>
+</section>
+{{ template "footer.html" . }}

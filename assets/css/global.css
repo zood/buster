@@ -1,267 +1,271 @@
 /* GLOBAL */
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-  @font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Lato Regular'), local('Lato-Regular'),
-         url('../fonts/lato-v16-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-         url('../fonts/lato-v16-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
-  /* montserrat-regular - latin */
 @font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Montserrat Regular'), local('Montserrat-Regular'),
-         url('../fonts/montserrat-v14-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-         url('../fonts/montserrat-v14-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
-  /* montserrat-800 - latin */
-  @font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 800;
-    src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),
-         url('../fonts/montserrat-v14-latin-800.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-         url('../fonts/montserrat-v14-latin-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Lato Regular"), local("Lato-Regular"),
+    url("../fonts/lato-v16-latin-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/lato-v16-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-regular - latin */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Montserrat Regular"), local("Montserrat-Regular"),
+    url("../fonts/montserrat-v14-latin-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/montserrat-v14-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-800 - latin */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 800;
+  src: local("Montserrat ExtraBold"), local("Montserrat-ExtraBold"),
+    url("../fonts/montserrat-v14-latin-800.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/montserrat-v14-latin-800.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
 
-  :root {
-    font-size: 14px;
-    }
+:root {
+  font-size: 14px;
+}
 
 a {
-    color: #0000ff;
+  color: #0000ff;
 }
 
 a:visited {
-    color: #3c4466;
+  color: #3c4466;
 }
 @media screen and (max-width: 640px) {
-     .container {
-        padding: 0 8px;
-    }
-    .container * {
-       width: auto;
-    }
-    .mobile-col {
-        width: 100% !important;
-        max-width: 100%;
-     }
+  .container {
+    padding: 0 8px;
   }
-  
   .container * {
+    width: auto;
+  }
+  .mobile-col {
+    width: 100% !important;
     max-width: 100%;
+  }
+}
+
+.container * {
+  max-width: 100%;
 }
 
 body {
-    background: white;
-    font-family: 'Lato', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: #46585e;
-    margin-top: 7.5rem;
+  background: white;
+  font-family: "Lato", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #46585e;
+  margin-top: 7.5rem;
 }
 
 /* HEADER */
 
 header {
-    width: 100%;
-    background-color:rgba(255,255,255,.9);
-    backdrop-filter: blur(10px);
-height:7.5rem;
-    position: fixed;
-    display: flex;
-    justify-items: center;
-    top: 0;
-    padding: 1rem;
-    overflow: hidden;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  height: 7.5rem;
+  position: fixed;
+  display: flex;
+  justify-items: center;
+  top: 0;
+  padding: 1rem;
+  overflow: hidden;
 }
 .container {
-    width: 1000px;
-    max-width: 100%;
-    margin: 0 auto;
+  width: 1000px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 header .container {
-    display: flex;
-    justify-content: space-between; 
+  display: flex;
+  justify-content: space-between;
 }
-
 
 #header-logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 #header-logo img {
-    height: 50px;
-    width: auto;
-
+  height: 50px;
+  width: auto;
 }
 
 #menu {
-
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 422px;
-    display: flex;
-    justify-content: space-around;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 422px;
+  display: flex;
+  justify-content: space-around;
 }
 
 #menu > .item {
-    color: #999;
-    text-decoration: none;
-    font-weight: 800;
-    font-family: 'Montserrat';
-    font-size: 1.125rem;
-    line-height: 2.33;
-    margin-left: 1rem;
-    margin-right: 0px;
-    transition: 0.1s;
+  color: #999;
+  text-decoration: none;
+  font-weight: 800;
+  font-family: "Montserrat";
+  font-size: 1.125rem;
+  line-height: 2.33;
+  margin-left: 1rem;
+  margin-right: 0px;
+  transition: 0.1s;
 }
 
-
-
 #menu > .item::after {
-    width: 18px;
-    height: 5px;
-    border-radius: 2.5px;
-    display: block;
-    content: '';
-    background-color: #cccccc;
+  width: 18px;
+  height: 5px;
+  border-radius: 2.5px;
+  display: block;
+  content: "";
+  background-color: #cccccc;
 }
 
 #menu > .item:hover::after {
-    width: 43px;
-    transition: .3s all;
+  width: 43px;
+  transition: 0.3s all;
 }
 
 #menu > .active.item::after {
-    width: 43px;
-    background-color: #5cd2ff;
-    transition: .3s all;
+  width: 43px;
+  background-color: #5cd2ff;
+  transition: 0.3s all;
 }
-#menu > .active.item { 
-    color: #444;
+#menu > .active.item {
+  color: #444;
 }
 #menu > .item:hover {
-color: #333;}
+  color: #333;
+}
 
 hr {
-    border-top: 1px solid #3c4466;
-    margin: 2rem;
+  border-top: 1px solid #3c4466;
+  margin: 2rem;
 }
 
 .inline-svg {
-    display: inline-flex;
-    align-self: center;
-    height: 1.25rem;
-    margin: 0 .25rem;
+  display: inline-flex;
+  align-self: center;
+  height: 1.25rem;
+  margin: 0 0.25rem;
 }
 
-.qa-block  {
-    padding: 0 1.5rem;
-  }
-  .qa-block ul {
-    display: flex;
-    list-style: none;
-  }
-  .qa-block ul li:first-child {
-    margin-right: 2rem;
-    margin-bottom: 1rem;
-    color: #5cd1ff;
-    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 800;
-  }
-  .qa-block ul.answer {
-    margin-bottom: 3.125rem;
-    line-height: 1.56;
-    color: #666666;
-  }
-  .qa-block ul.answer li:first-child {
-    color: #cccccc;
-  }
-  .qa-block ul li:nth-child(2) {
-    width: 905px;
-  }
-  .qa-block h5 {
-    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin-bottom: .9375rem;
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: #333333;
-  }
-  .qa-wrapper {
-    margin: 5.625rem 0;
-  }
-
+.qa-block {
+  padding: 0 1.5rem;
+}
+.qa-block ul {
+  display: flex;
+  list-style: none;
+}
+.qa-block ul li:first-child {
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  color: #5cd1ff;
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+.qa-block ul.answer {
+  margin-bottom: 3.125rem;
+  line-height: 1.56;
+  color: #666666;
+}
+.qa-block ul.answer li:first-child {
+  color: #cccccc;
+}
+.qa-block ul li:nth-child(2) {
+  width: 905px;
+}
+.qa-block h5 {
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-bottom: 0.9375rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #333333;
+}
+.qa-wrapper {
+  margin: 5.625rem 0;
+}
 
 .feature {
-    display: flex;
-    padding: 0 1.5rem;
-    margin-top: 3.75rem;
-    align-items: flex-end;
-    justify-content: space-between;
-  }
-  
-  .feature > div {
-    justify-items: end;
-    flex-direction: column;
-  }
-  .feature:nth-child(odd) {
-    flex-direction: row-reverse;
-  }
-  .feature h4 {
-    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 2.25rem;
-    flex-grow: 2;
-    font-weight: 800;
-    letter-spacing: -0.7px;
-    text-align: left;
-    margin-bottom: 2.5rem;
-    color: #333333;
-  }
+  display: flex;
+  margin-top: 3.75rem;
+  align-items: flex-end;
+  justify-content: space-between;
+}
 
-  .feature p {
-    width: 477px;
-    
-    font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    line-height: 1.56;
-    letter-spacing: normal;
-    text-align: left;
-    margin-bottom: 1.875rem;
-    color: #666;
-  }
-  .feature img {
-    width: 300px;
-    height: auto;
-  }
+.feature > div {
+  justify-items: end;
+  flex-direction: column;
+}
+.feature:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+.feature h4 {
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 2.25rem;
+  flex-grow: 2;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+  text-align: left;
+  margin-bottom: 2.5rem;
+  color: #333333;
+}
 
+.feature p {
+  width: 477px;
+
+  font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.56;
+  letter-spacing: normal;
+  text-align: left;
+  margin-bottom: 1.875rem;
+  color: #666;
+}
+.feature img {
+  width: 300px;
+  height: auto;
+}
 
 @media screen and (max-width: 640px) {
   .feature img {
-padding: 0 1rem;
-padding-bottom: 1rem;
+    padding: 0 1rem;
+    padding-bottom: 1rem;
   }
-    #introducing-logo {
-        order: -1;
-    }
+  #introducing-logo {
+    order: -1;
+  }
   .hero-section {
     flex-wrap: wrap;
   }
   .feature {
     flex-wrap: wrap;
+    padding: 0 .5rem;
   }
 }
 
 @media screen and (min-width: 641px) and (max-width: 1024px) {
+  .feature {
+    padding: 0 1rem;
+  }
   .feature > div {
     width: 50%;
     max-width: 40ch;
@@ -269,35 +273,38 @@ padding-bottom: 1rem;
 }
 
 section.privacy-policy {
-    padding: 3.75rem 0;
-    background-color: #333333;
-    width:100%;
-    max-width: 100%;
+  padding: 3.75rem 0;
+  background-color: #333333;
+  width: 100%;
+  max-width: 100%;
 }
 .privacy-policy h5 {
-    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #ffffff;
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
 }
 .privacy-policy p {
-    font-family: Lato;
-    font-size: .9375rem;
+  font-family: Lato;
+  font-size: 0.9375rem;
 
-    line-height: 1.67;
-    text-align: left;
-    color: #999999;
-  
+  line-height: 1.67;
+  text-align: left;
+  color: #999999;
 }
 .copyright {
-    background-color: #222222;
-    font-family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: .875rem;
-    line-height: 1.67;
-    padding: 2.25rem 0;
-    letter-spacing: normal;
-    text-align: left;
-    color: #666666;
-  
+  background-color: #222222;
+  font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.67;
+  padding: 2.25rem 0;
+  letter-spacing: normal;
+  text-align: left;
+  color: #666666;
 }
-.copyright ul {display: flex;list-style-type: none;}
+.copyright ul {
+  display: flex;
+  list-style-type: none;
+}
