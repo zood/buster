@@ -5,6 +5,7 @@ import (
 	"html/template"
 	"net/http"
 	"strconv"
+	"time"
 
 	"github.com/gorilla/mux"
 )
@@ -63,6 +64,8 @@ func blogPostHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	date := time.Unix(post.Date, 0)
+
 	// Just serve the post html
 	rsrcs.ExecuteTemplate("post-single.html", w, map[string]interface{}{
 		// Convert the post body into a template.HTML so it doesn't get escaped
@@ -70,5 +73,6 @@ func blogPostHandler(w http.ResponseWriter, r *http.Request) {
 		"title":        fmt.Sprintf("%s | Zood Blog", post.Title),
 		"activeHeader": "news",
 		"cssPath":      "/css/blog.css",
+		"humanDate":    date.Format("January 2"),
 	})
 }

@@ -3,18 +3,21 @@
         "id": 1,
         "slug": "introducing-zood-the-privacy-company",
         "title": "Introducing, Zood — The Privacy Company",
-        "intro": "These are the opening words of the post. It doesn't say everything."
+        "intro": "These are the opening words of the post. It doesn't say everything.",
+        "date": 1562253374
     },
     {
         "id": 2,
         "slug": "post-2-slug",
         "title": "Title of post # 2",
-        "intro": "Teaser text for post 2"
+        "intro": "Teaser text for post 2",
+        "date": 1564856174
     },
     {
         "id": 3,
         "slug": "post-3-slug",
         "title": "HTML Element Test",
-        "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere iaculis sem, a imperdiet massa vulputate sagittis. Donec tincidunt mi ut tempor scelerisque. Mauris vitae vel justo convallis tincidunt mi ut tempor sceleris"
+        "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere iaculis sem, a imperdiet massa vulputate sagittis. Donec tincidunt mi ut tempor scelerisque. Mauris vitae vel justo convallis tincidunt mi ut tempor sceleris",
+        "date": 1568052977
     }
 ]
