@@ -23,13 +23,17 @@
   font-size: 1.25rem;
   padding: 1rem;
   width: 100%;
-  color: #ccc;
+  color: #666;
   line-height: 1.4;
   border-radius: 0.75rem;
   width: 500px;
   max-width: 100%;
   outline: none;
   border: solid 2px #ccc;
+}
+.form-group input::placeholder ,
+.form-group textarea::placeholder  {
+  color: #ccc;
 }
 .form-group input:focus,
 .form-group textarea:focus {
