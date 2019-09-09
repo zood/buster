@@ -17,3 +17,9 @@
     align-items: center;
     flex-grow: 1;
 }
+
+@media screen and (max-width: 640px) {
+    .about .feature:first-child {
+      margin-top: 1rem;
+    }
+}

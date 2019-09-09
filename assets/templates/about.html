@@ -1,61 +1,59 @@
 {{ template "header.html" . }}
 
 <section class="feature">
-<div class="img"><img class="mobile-col" src="/images/website_about_security.svg" alt="{{.ItsAboutPrivacy}}"></div>
+    <div class="img"><img class="mobile-col" src="/images/website_about_security.svg" alt="{{.ItsAboutPrivacy}}"></div>
 
-<div>
-    <h4>{{.ItsAboutPrivacy}}  <div class="pop">{{ .Really }}</div></h4>
-  
-    <p>{{ .AboutPrivacyMsg }}</p>
-</div>
+    <div>
+        <h4>{{.ItsAboutPrivacy}}
+            <div class="pop">{{ .Really }}</div>
+        </h4>
+
+        <p>{{ .AboutPrivacyMsg }}</p>
+    </div>
 </section>
 
-
-
 <section class="feature">
-<div class="img"><img class="mobile-col" src="/images/website_about_different.svg" alt="{{.ZoodIsDifferent}}"></div>
-<div>
-    <h4>{{.ZoodIsDifferent}}</h4>
-    <p>{{ .AboutDifferentMsg }}</p>
-</div>
+    <div class="img"><img class="mobile-col" src="/images/website_about_different.svg" alt="{{.ZoodIsDifferent}}"></div>
+    <div>
+        <h4>{{.ZoodIsDifferent}}</h4>
+        <p>{{ .AboutDifferentMsg }}</p>
+    </div>
 </section>
 <section class="feature">
-<div class="img"><img class="mobile-col" src="/images/website_about_encryption.svg" alt="{{.DidWeMentionEncryption}}"></div>
-<div>
-    <h4>{{.DidWeMentionEncryption}}</h4>
-    <p>{{ .AboutEncryptionMsg }}</p>
-</div>
+    <div class="img"><img class="mobile-col" src="/images/website_about_encryption.svg" alt="{{.DidWeMentionEncryption}}"></div>
+    <div>
+        <h4>{{.DidWeMentionEncryption}}</h4>
+        <p>{{ .AboutEncryptionMsg }}</p>
+    </div>
 </section>
 
 <section class="qa-wrapper">
-<div class="qa-block">
+    <div class="qa-block">
 
-    <ul class="question">
-        <li>Q</li>
-        <li>
-            <h5>{{.IfYouDontSurveilQuestion}}</h5>
-        </li>
-    </ul>
-    <ul class="answer">
-        <li>A</li>
-        <li>{{.IfYouDontSurveilAnswer}}</li>
-    </ul>
-</div>
-<div class="qa-block">
+        <ul class="question" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question" class="question">
+            <li>Q</li>
+            <li>
+                <h5 itemprop="name">{{.IfYouDontSurveilQuestion}}</h5>
+            </li>
+        </ul>
+        <ul  itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" class="answer" class="answer">
+            <li>A</li>
+            <li itemprop="text">{{.IfYouDontSurveilAnswer}}</li>
+        </ul>
+    </div>
+    <div class="qa-block">
 
-    <ul class="question">
-        <li>Q</li>
-        <li>
-            <h5>{{.HowDoISubmitQuestion}}</h5>
-        </li>
-    </ul>
-    <ul class="answer">
-        <li>A</li>
-        <li>{{.HowDoISubmitAnswer}}</li>
-    </ul>
-</div>
+        <ul itemprop="mainEntity" itemscope itemtype="https://schema.org/Question" class="question">
+            <li>Q</li>
+            <li>
+                <h5 itemprop="name">{{.HowDoISubmitQuestion}}</h5>
+            </li>
+        </ul>
+        <ul  itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" class="answer" class="answer">
+            <li>A</li>
+            <li itemprop="text">{{.HowDoISubmitAnswer}}</li>
+        </ul>
+    </div>
 </section>
-
-
 
 {{ template "footer.html" . }}

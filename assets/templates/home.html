@@ -51,28 +51,28 @@
 <section class="qa-wrapper">
 <div class="qa-block">
 
-    <ul class="question">
+    <ul class="question" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
         <li>Q</li>
         <li>
-            <h5>{{.LotsofServicesQuestion}}</h5>
+            <h5 itemprop="name">{{.LotsofServicesQuestion}}</h5>
         </li>
     </ul>
-    <ul class="answer">
+    <ul itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" class="answer">
         <li>A</li>
-        <li>{{.LotsofServicesAnswer}}</li>
+        <li itemprop="text">{{.LotsofServicesAnswer}}</li>
     </ul>
 </div>
 <div class="qa-block">
 
-    <ul class="question">
+    <ul class="question" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
         <li>Q</li>
         <li>
-            <h5>{{.WhenWillZoodLocationQuestion}}</h5>
+            <h5 itemprop="name">{{.WhenWillZoodLocationQuestion}}</h5>
         </li>
     </ul>
-    <ul class="answer">
+    <ul itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" class="answer">
         <li>A</li>
-        <li>{{.WhenWillZoodLocationAnswer}}</li>
+        <li itemprop="text">{{.WhenWillZoodLocationAnswer}}</li>
     </ul>
 </div>
 </section>
