@@ -1,25 +1,26 @@
 .container.about {
-    padding-top: 2.5rem;
+  padding-top: 2.5rem;
 }
 .pop {
-    color:#5cd1ff;
+  color: #5cd1ff;
 }
-.about .feature img {width: 250px;}
+.about .feature img {
+  width: 250px;
+}
 .about .feature {
-    margin-top: 7.5rem;
-    align-items: center;
-    justify-content: start;
-
+  margin-top: 7.5rem;
+  align-items: center;
+  justify-content: start;
 }
 
 .about .feature .img {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
 }
 
 @media screen and (max-width: 640px) {
-    .about .feature:first-child {
-      margin-top: 1rem;
-    }
+  .about .feature:first-child {
+    margin-top: 1rem;
+  }
 }
