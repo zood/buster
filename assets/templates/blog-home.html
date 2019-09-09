@@ -1,11 +1,11 @@
 {{ template "header.html" . }}
-
+<h1>Zood Blog</h1>
+<section class="blog-grid">
 {{ range .posts }}
 
-<p><a href="/blog/{{.ID}}/{{.Slug}}">{{.Title}}</a></p>
-<p>{{.Intro}}</p>
-<p><a href="/blog/{{.ID}}/{{.Slug}}">Read more…</a></p>
-
+<article><a href="/blog/{{.ID}}/{{.Slug}}"><h2>{{.Title}}</h2></a>
+<div class="excerpt">{{.Intro}}</div>
+<p><a class="btn" href="/blog/{{.ID}}/{{.Slug}}">Read more</a></p></article>
 {{ end }}
-
+</section>
 {{ template "footer.html" . }}

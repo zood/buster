@@ -14,6 +14,7 @@ func blogArchivesHandler(w http.ResponseWriter, r *http.Request) {
 	rsrcs.ExecuteTemplate("blog-archive.html", w, map[string]interface{}{
 		"title":        "Blog Archive | Zood",
 		"activeHeader": "news",
+		"cssPath":      "/css/blog.css",
 	})
 }
 
@@ -23,6 +24,7 @@ func blogHomeHandler(w http.ResponseWriter, r *http.Request) {
 		"posts":        rsrcs.Posts(5, 0),
 		"title":        "Blog | Zood",
 		"activeHeader": "news",
+		"cssPath":      "/css/blog.css",
 	})
 }
 
@@ -67,5 +69,6 @@ func blogPostHandler(w http.ResponseWriter, r *http.Request) {
 		"body":         template.HTML(rsrcs.PostBody(postID)),
 		"title":        fmt.Sprintf("%s | Zood Blog", post.Title),
 		"activeHeader": "news",
+		"cssPath":      "/css/blog.css",
 	})
 }

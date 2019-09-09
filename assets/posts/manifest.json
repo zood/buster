@@ -10,5 +10,11 @@
         "slug": "post-2-slug",
         "title": "Title of post # 2",
         "intro": "Teaser text for post 2"
+    },
+    {
+        "id": 3,
+        "slug": "post-3-slug",
+        "title": "HTML Element Test",
+        "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere iaculis sem, a imperdiet massa vulputate sagittis. Donec tincidunt mi ut tempor scelerisque. Mauris vitae vel justo convallis tincidunt mi ut tempor sceleris"
     }
 ]

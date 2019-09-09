@@ -5,7 +5,7 @@
         <h1 class="slogan">{{.ThePrivacyCompany}}</h1>
         <p class="section1-explanation">{{ .companyDescription }}</p>
     </div>
-    <img alt="{{.ThePrivacyCompany}}" id="introducing-logo" src="/images/website_header.svg"/>
+    <img alt="{{.ThePrivacyCompany}}" loading="lazy" id="introducing-logo" src="/images/website_header.svg"/>
 
 </section>
 
@@ -28,21 +28,21 @@
 
 </section> */}}
 <section class="feature">
-<img alt="{{.ShareYourLocation}}" class="mobile-col" src="/images/onboarding_share_location.svg">
+<img alt="{{.ShareYourLocation}}" loading="lazy" class="mobile-col" src="/images/onboarding_share_location.svg">
 <div>
     <h4>{{.ShareYourLocation}}</h4>
     <p>{{.LocationDescriptionMsg}}</p>
 </div>
 </section>
 <section class="feature">
-<img alt="{{.SafeAndSecure}}" class="mobile-col" src="/images/onboarding_safe_secure.svg">
+<img alt="{{.SafeAndSecure}}" loading="lazy" class="mobile-col" src="/images/onboarding_safe_secure.svg">
 <div>
     <h4>{{.SafeAndSecure}}</h4>
     <p>{{.SafeDescriptionMsg}}</p>
 </div>
 </section>
 <section class="feature">
-<img alt="{{.AddOnlyTrustedFriends}}" class="mobile-col" src="/images/onboarding_add_friends.svg">
+<img alt="{{.AddOnlyTrustedFriends}}" loading="lazy" class="mobile-col" src="/images/onboarding_add_friends.svg">
 <div>
     <h4>{{.AddOnlyTrustedFriends}}</h4>
     <p>{{.TrustedDescriptionMsg}}</p>
@@ -83,10 +83,10 @@
 </p>
 <div id="screenshots">
     <div class="badge-and-screenshot mobile-col">
-        <a href="{{ .googlePlayURL }}"><img class="badge" src="/images/gplay-badge.svg"/></a>
+        <a href="{{ .googlePlayURL }}"><img class="badge" loading="lazy" src="/images/gplay-badge.svg"/></a>
     </div>
     <div class="badge-and-screenshot mobile-col">
-        <a href="{{ .appStoreURL }}"><img class="badge" src="/images/app-store-badge.svg"/></a>
+        <a href="{{ .appStoreURL }}"><img class="badge" loading="lazy" src="/images/app-store-badge.svg"/></a>
     </div>
 </div>
 </section>

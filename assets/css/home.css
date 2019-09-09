@@ -217,7 +217,9 @@
   flex-flow: column;
   align-items: center;
 }
-
+.hero-section img,.feature img {
+  user-select: none;pointer-events: none;
+}
 @media screen and (max-width: 640px) {
   .feature img {
 padding: 0 1rem;
