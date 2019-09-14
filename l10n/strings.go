@@ -35,8 +35,8 @@ const (
 	IfYouDontSurveilAnswerMsg
 	HowDoISubmitQuestionMsg
 	HowDoISubmitAnswerMsg
-	getInTouchWithUs
-	getInTouchWithUsMsg
+	GetInTouchWithUs
+	GetInTouchWithUsMsg
 )
 
 // String returns a localized string matching the language

@@ -30,22 +30,26 @@
   max-width: 100%;
   outline: none;
   border: solid 2px #ccc;
+  transition: all 0.1s ease-in-out;
 }
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: #ccc;
+  transition: all 0.1s ease-in-out;
 }
 .form-group input:focus,
 .form-group textarea:focus {
   border: solid 2px #5cd1ff;
   border-radius: 0.75rem;
   box-shadow: 0 0 4px 2px rgba(92, 209, 255, 0.8);
+  transition: all 0.1s ease-in-out;
 }
 .btn {
   padding: 0.5rem 2rem;
+  transition: all 0.1s ease-in-out;
 }
 .contact .feature {
-  margin-top: 15rem;
+  margin-top: 10rem;
   margin-bottom: 6.25rem;
 }
 .contact .form {
@@ -55,6 +59,7 @@
   width: 618px;
 }
 @media screen and (max-width: 640px) {
+
   .contact .feature {
     margin-top: 5rem;
   }
@@ -68,12 +73,15 @@
     padding: 0 0.5rem;
   }
   .contact img {
-    width: 100%;
-    max-width: 100%;
+    max-width: 75%;margin: 0 auto 1rem auto;
+  }
+  .contact .feature {
+    flex-wrap: wrap;
   }
 }
 
 @media screen and (min-width: 641px) and (max-width: 1024px) {
+
   .contact .feature > div {
     width: auto;
     max-width: 40%;

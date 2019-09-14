@@ -7,18 +7,27 @@
 .blog-grid article {
   padding: 2.5rem;
   border: 1px #ccc solid;
+  display: flex;
+  flex-direction: column;
   border-radius: 10px;
-  transition: 0.5s box-shadow ease-in;
+  min-height: 390px;
+  transition: 0.15s box-shadow ease-in-out;
 }
 .blog-grid article:hover {
   box-shadow: 0px 10px 25px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.5s box-shadow ease-in;
+  transition: 0.15s box-shadow ease-in-out;
 }
 .blog-grid article .excerpt {
   font-family: Lato;
   font-size: 1rem;
+  flex: 1;
   color: #666;
-  margin: 2rem 0;
+  margin: 1.4rem 0;
+}
+.blog-grid .date {
+  color: #666;
+  line-height: 1.56;
+  font-size: 1.25rem;
 }
 .blog-grid h2 {
   font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -30,6 +39,13 @@
 .blog-grid a {
   color: #333;
 }
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  .hero-section img,
+  .feature img {
+    max-width: 75%;margin: 0 auto 1rem auto;
+  }
+}
+
 h1 {
   font-family: Montserrat;
   font-size: 30px;

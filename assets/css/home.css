@@ -230,6 +230,9 @@
   pointer-events: none;
 }
 @media screen and (max-width: 640px) {
+.slogan {
+  font-size: 3.1rem;
+}
   .feature img {
     padding: 0 1rem;
     padding-bottom: 1rem;
@@ -243,9 +246,21 @@
   .feature {
     flex-wrap: wrap;
   }
+  .feature h4 {
+    text-align:center;
+  }
+
+  .hero-section img,
+  .feature img {
+    max-width: 75%;margin: 0 auto 1rem auto;
+  }
 }
 
 @media screen and (min-width: 641px) and (max-width: 1024px) {
+  .hero-section img,
+  .feature img {
+    max-width: 40%; margin: auto 0;
+  }
   .feature > div {
     width: 50%;
     max-width: 40ch;

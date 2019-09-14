@@ -17,7 +17,7 @@ var enStrings = map[StringAsset]string{
 	AboutDifferentMsg:                      "We don't sell your data. Our mission is simple: build apps and services that help people live their life and charge a fair price for it. We don't treat our users like eyeballs for staring at ads.",
 	DidWeMentionTheEncryptionInterrogative: "Did we mention the encryption?",
 	AboutEncryptionMsg:                     "All Zood products comes with end-to-end encryption, so you don't even have to trust us to not sell you out. Our first product, Zood Location, is now available and we're hoping to make more privacy preserving/enhancing services in the future.",
-	LotsOfServicesSecureQuestionMsg:        "Lots of services say they are &quot;secure&quot;. How can I trust Zood?",
+	LotsOfServicesSecureQuestionMsg:        "Lots of services say they are \"secure\". How can I trust Zood?",
 	LotsOfServicesSecureAnswerMsg:          "You don't have to trust Zood, because we use end-to-end encryption to protect your data. That means all your data is encrypted before it ever leaves your phone, so you don't have to trust us to not sell you out.",
 	WhenZoodLocationReleasedQuestionMsg:    "When will Zood Location be fully released?",
 	WhenZoodLocationReleasedAnswerMsg:      "We plan to release the Android app in autumn 2019. Shortly after that we’ll prepare the launch for iOS.",
@@ -25,6 +25,6 @@ var enStrings = map[StringAsset]string{
 	IfYouDontSurveilAnswerMsg:              "By charging customers a modest fee to use Zood services.",
 	HowDoISubmitQuestionMsg:                "How do I submit feedback regarding your services?",
 	HowDoISubmitAnswerMsg:                  "Each app has a built-in feedback form we’d love you to fill. Constructive feedback is always appreciated but a few kind words every now and then helps us stay motivated ;)",
-	getInTouchWithUs:                       "Get in touch with us!",
-	getInTouchWithUsMsg:                    "We’d like to hear what you have to say! Feedback and improvement suggestions will help us develop and make better products for you. Fill in the form below or send us an email at hello@zoodxyz.com.",
+	GetInTouchWithUs:                       "Get in touch with us!",
+	GetInTouchWithUsMsg:                    "We'd like to hear what you have to say! Feedback and improvement suggestions will help us develop and make better products for you. Fill in the form below or send us an email at ",
 }
