@@ -40,6 +40,7 @@ func main() {
 	r.HandleFunc("/privacy/mobile-apps", mobileAppsPrivacyHandler).Methods(http.MethodGet)
 	r.HandleFunc("/about", aboutHandler).Methods(http.MethodGet)
 	r.HandleFunc("/products/location", locationAppHomeHandler).Methods(http.MethodGet)
+	r.HandleFunc("/contact", contactHandler).Methods(http.MethodGet)
 
 	// blog
 	r.HandleFunc("/blog", blogHomeHandler).Methods(http.MethodGet)

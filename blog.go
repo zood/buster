@@ -5,6 +5,7 @@ import (
 	"html/template"
 	"net/http"
 	"strconv"
+	"time"
 
 	"github.com/gorilla/mux"
 )
@@ -12,15 +13,19 @@ import (
 func blogArchivesHandler(w http.ResponseWriter, r *http.Request) {
 	rsrcs := resourcesFromContext(r.Context())
 	rsrcs.ExecuteTemplate("blog-archive.html", w, map[string]interface{}{
-		"title": "Blog Archive | Zood",
+		"title":        "Blog Archive | Zood",
+		"activeHeader": "news",
+		"cssPath":      "/css/blog.css",
 	})
 }
 
 func blogHomeHandler(w http.ResponseWriter, r *http.Request) {
 	rsrcs := resourcesFromContext(r.Context())
 	rsrcs.ExecuteTemplate("blog-home.html", w, map[string]interface{}{
-		"posts": rsrcs.Posts(5, 0),
-		"title": "Blog | Zood",
+		"posts":        rsrcs.Posts(5, 0),
+		"title":        "Blog | Zood",
+		"activeHeader": "news",
+		"cssPath":      "/css/blog.css",
 	})
 }
 
@@ -59,10 +64,15 @@ func blogPostHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	date := time.Unix(post.Date, 0)
+
 	// Just serve the post html
 	rsrcs.ExecuteTemplate("post-single.html", w, map[string]interface{}{
 		// Convert the post body into a template.HTML so it doesn't get escaped
-		"body":  template.HTML(rsrcs.PostBody(postID)),
-		"title": fmt.Sprintf("%s | Zood Blog", post.Title),
+		"body":         template.HTML(rsrcs.PostBody(postID)),
+		"title":        fmt.Sprintf("%s | Zood Blog", post.Title),
+		"activeHeader": "news",
+		"cssPath":      "/css/blog.css",
+		"humanDate":    date.Format("January 2"),
 	})
 }

@@ -12,7 +12,31 @@ type StringAsset int
 // Enumeration of all the localized strings in the app
 const (
 	CompanyDescriptionMsg StringAsset = iota
+	ThePrivacyCompany
+	ShareYourLocation
+	LocationDescriptionMsg
+	SafeAndSecure
+	SafeDescriptionMsg
+	TrustedDescriptionMsg
+	AddOnlyTrustedFriends
 	ZoodLocationBlurbMsg
+	ItsAboutPrivacy
+	Really
+	AboutPrivacyMsg
+	ZoodIsDifferent
+	AboutDifferentMsg
+	DidWeMentionTheEncryptionInterrogative
+	AboutEncryptionMsg
+	LotsOfServicesSecureQuestionMsg
+	LotsOfServicesSecureAnswerMsg
+	WhenZoodLocationReleasedQuestionMsg
+	WhenZoodLocationReleasedAnswerMsg
+	IfYouDontSurveilQuestionMsg
+	IfYouDontSurveilAnswerMsg
+	HowDoISubmitQuestionMsg
+	HowDoISubmitAnswerMsg
+	GetInTouchWithUs
+	GetInTouchWithUsMsg
 )
 
 // String returns a localized string matching the language

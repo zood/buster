@@ -1,87 +1,268 @@
 /* HOME PAGE */
 
-#section1 {
-    background-color: #3c4466;
-    padding: 64px;
-    text-align: center;
-    color: white;
+.hero-section {
+  background-color: #fff;
+  padding: 2rem 0;
+  min-height: 40vh;
+  text-align: center;
+  display: flex;
+  color: #2f2f2f;
+  align-items: center;
+  justify-content: space-around;
 }
 
-#section1 > p {
-    margin: 8px;
+.hero-section p {
+  margin: 0.5rem 0;
+  max-width: 482px;
+  text-align: left;
+  font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.56;
+  text-align: left;
+  color: #666666;
+}
+.hero-section div {
+  flex-grow: 1;
+  padding: 0 1.5rem;
+}
+.slogan {
+  width: 359px;
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 3.75rem;
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -1.2px;
+  text-align: left;
 }
 
-#section1 > #introducing-logo {
-    height: 64px;
-    width: auto;
+.slogan::after {
+  margin: 1.5rem 0;
+  width: 40px;
+  height: 10px;
+  border-radius: 5px;
+  display: block;
+  content: "";
+  background-color: #5cd2ff;
 }
 
-#section1 a {
-    color: #ffe422;
+.hero-section > #introducing-logo {
+  height: 300px;
+  width: 432px;
 }
 
-#section1-explanation {
-    font-size: 14px;
+.hero-section a {
+  color: #ffe422;
+}
+
+.hero-section-explanation {
+  width: 483px;
+  font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.56;
+  text-align: left;
+  color: #666666;
 }
 
 #section-zood-location {
-    background-color: white;
-    text-align: center;
-    margin-top: 32px;
+  background-color: white;
+  text-align: center;
+}
+#section-zood-location h3 {
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 5rem;
+  letter-spacing: -0.6px;
+  text-align: center;
+  color: #666666;
+}
+.feature {
+  display: flex;
+  padding: 0 1.5rem;
+  margin-top: 3.75rem;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.feature > div {
+  justify-items: end;
+  flex-direction: column;
+}
+.feature:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+.feature h4 {
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 2.25rem;
+  flex-grow: 2;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+  text-align: left;
+  margin-bottom: 2.5rem;
+  color: #333333;
+}
+.buttons {
+  margin-bottom: 6.25rem;
+}
+.buttons p {
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 1.875rem;
+  text-align: center;
+  color: #333333;
+}
+.feature p {
+  width: 477px;
+
+  font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.56;
+  letter-spacing: normal;
+  text-align: left;
+  margin-bottom: 1.875rem;
+  color: #666;
+}
+.feature img {
+  width: 300px;
+  height: auto;
 }
 
 #screenshots {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 #screenshots img {
-    margin-left: 32px;
-    margin-right: 32px;
-    margin-top: 32px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 2rem;
 }
 
 .badge {
-    width: 175px;
-    height: auto;
+  width: 235px;
+  height: auto;
 }
 
 .screenshot {
-    width: 200px;
-    height: auto;
+  width: 200px;
+  height: auto;
 }
 
-#app-icon {
-    height: 96px;
-    width: auto;
+.app-icon {
+  height: 120px;
+  display: block;
+  width: auto;
+  padding: 1.25rem;
+  border-radius: 20px;
+  box-shadow: 0px 15px 50px 0 rgba(7, 29, 56, 0.15);
+  background-color: #ffffff;
+}
+.active .app-name::after {
+  margin: 1.5rem auto;
+  width: 40px;
+  height: 10px;
+  border-radius: 5px;
+  display: block;
+  content: "";
+  background-color: #5cd2ff;
+}
+.active .app-name {
+  color: #333;
 }
 
-#app-icon-and-name {
-    vertical-align: middle;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 4px;
+.app-icon-and-name {
+  vertical-align: middle;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: start;
+  margin-bottom: 0.25rem;
+}
+.app-icon-and-name > div {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  justify-items: center;
+  align-items: center;
 }
 
-#app-name {
-    font-size: 28px;
-    font-weight: 500;
-    margin-left: 8px;
+.app-name {
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.5rem;
+  margin-top: 3.125rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  line-height: 1.68;
+  text-align: center;
+  color: #ccc;
 }
 
+.app-name.active {
+  color: #333;
+}
 #app-description {
-    font-size: 14px;
-    margin-left: 32px;
-    margin-right: 32px;
-    font-weight: 300;
+  font-size: 0.875rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-weight: 300;
 }
 
 .badge-and-screenshot {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.hero-section img,
+.feature img {
+  user-select: none;
+  pointer-events: none;
+}
+@media screen and (max-width: 640px) {
+.slogan {
+  font-size: 3.1rem;
+}
+  .feature img {
+    padding: 0 1rem;
+    padding-bottom: 1rem;
+  }
+  #introducing-logo {
+    order: -1;
+  }
+  .hero-section {
+    flex-wrap: wrap;
+  }
+  .feature {
+    flex-wrap: wrap;
+  }
+  .feature h4 {
+    text-align:center;
+  }
+
+  .hero-section img,
+  .feature img {
+    max-width: 75%;margin: 0 auto 1rem auto;
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  .hero-section img,
+  .feature img {
+    max-width: 40%; margin: auto 0;
+  }
+  .feature > div {
+    width: 50%;
+    max-width: 40ch;
+  }
 }

@@ -1,0 +1,33 @@
+{{ template "header.html" . }}
+
+<section class="feature">
+    <div class="img"><img loading="lazy" class="mobile-col" src="/images/website_contact.svg" alt="Get in touch with us"></div>
+
+    <div>
+        <h4>{{ .GetInTouchWithUs }} </h4>
+
+        <p>{{ .GetInTouchWithUsMsg }} <a href="mailto:hello@zoodxyz.com">hello@zoodxyz.com</a>.</p>
+
+    </div>
+</section>
+<section class="form">
+
+    <form>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input placeholder="John Doe" type="text" id="name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" placeholder="john@doe.com" id="email">
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea rows="6" placeholder="What's on your mind?" type="text" id="name"></textarea>
+        </div>
+        <div class="form-group">
+            <button class="btn" type="submit">Send</button>
+        </div>
+    </form>
+</section>
+{{ template "footer.html" . }}

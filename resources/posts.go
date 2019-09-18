@@ -6,6 +6,7 @@ type Post struct {
 	Slug  string `json:"slug"`
 	Title string `json:"title"`
 	Intro string `json:"intro"`
+	Date  int64  `json:"date"`
 }
 
 type postSlice []Post

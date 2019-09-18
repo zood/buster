@@ -1,27 +1,94 @@
 {{ template "header.html" . }}
 
-<section id="section1">
-        <img id="introducing-logo" src="/images/zood-logo-on-dark.svg" />
-        <p id="slogan">The privacy company.</p>
-        <p id="section1-explanation">{{ .companyDescription }}</p>
+<section class="hero-section">
+    <div>
+        <h1 class="slogan">{{.ThePrivacyCompany}}</h1>
+        <p class="section1-explanation">{{ .companyDescription }}</p>
+    </div>
+    <img alt="{{.ThePrivacyCompany}}" loading="lazy" id="introducing-logo" src="/images/website_header.svg"/>
+
 </section>
 
-<section id="section-zood-location">
-    <div id="app-icon-and-name">
-        <img id="app-icon" src="/images/zood-location-icon-512.png" />
-        <p id="app-name">Zood Location</p>
+{{/* <section id="section-zood-location">
+<h3>Our Products</h3>
+    <div class="app-icon-and-name">
+    <div>
+        <img class="app-icon" src="/images/location_icon.svg" />
+        <p class="app-name">ASSISTANT</p>
     </div>
-    <p id="app-description">Share your location with your loved ones, while protecting your location from everyone else. <a href="/products/location">Learn more…</a></p>
-    <div id="screenshots">
-        <div class="badge-and-screenshot">
-            <a href="{{ .googlePlayURL }}"><img class="badge" src="/images/gplay-badge.svg" /></a>
-            <img class="screenshot" src="/images/zood-pixel-3-xl-720px.jpg" />
-        </div>
-        <div class="badge-and-screenshot">
-            <a href="{{ .appStoreURL }}"><img class="badge" src="/images/app-store-badge.svg" /></a>
-            <img class="screenshot" src="/images/zood-iphone-xs-max-720px.jpg" />
-        </div>
+        <div class="active">
+        <img class="app-icon" src="/images/location_icon.svg" />
+        <p class="app-name">Location</p>
     </div>
+        <div>
+        <img class="app-icon" src="/images/location_icon.svg" />
+        <p class="app-name">STORAGE</p>
+    </div>
+    </div>
+
+</section> */}}
+<section class="feature">
+<img alt="{{.ShareYourLocation}}" loading="lazy" class="mobile-col" src="/images/onboarding_share_location.svg">
+<div>
+    <h4>{{.ShareYourLocation}}</h4>
+    <p>{{.LocationDescriptionMsg}}</p>
+</div>
+</section>
+<section class="feature">
+<img alt="{{.SafeAndSecure}}" loading="lazy" class="mobile-col" src="/images/onboarding_safe_secure.svg">
+<div>
+    <h4>{{.SafeAndSecure}}</h4>
+    <p>{{.SafeDescriptionMsg}}</p>
+</div>
+</section>
+<section class="feature">
+<img alt="{{.AddOnlyTrustedFriends}}" loading="lazy" class="mobile-col" src="/images/onboarding_add_friends.svg">
+<div>
+    <h4>{{.AddOnlyTrustedFriends}}</h4>
+    <p>{{.TrustedDescriptionMsg}}</p>
+</div>
+</section>
+<section class="qa-wrapper">
+<div class="qa-block">
+
+    <ul class="question" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <li>Q</li>
+        <li>
+            <h5 itemprop="name">{{.LotsofServicesQuestion}}</h5>
+        </li>
+    </ul>
+    <ul itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" class="answer">
+        <li>A</li>
+        <li itemprop="text">{{.LotsofServicesAnswer}}</li>
+    </ul>
+</div>
+<div class="qa-block">
+
+    <ul class="question" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+        <li>Q</li>
+        <li>
+            <h5 itemprop="name">{{.WhenWillZoodLocationQuestion}}</h5>
+        </li>
+    </ul>
+    <ul itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" class="answer">
+        <li>A</li>
+        <li itemprop="text">{{.WhenWillZoodLocationAnswer}}</li>
+    </ul>
+</div>
+</section>
+
+<section class="buttons">
+
+<p>Download   <img src="/images/location_icon.svg" class="inline-svg">   Zood Location and safely share your location.
+</p>
+<div id="screenshots">
+    <div class="badge-and-screenshot mobile-col">
+        <a href="{{ .googlePlayURL }}"><img class="badge" loading="lazy" src="/images/gplay-badge.svg"/></a>
+    </div>
+    <div class="badge-and-screenshot mobile-col">
+        <a href="{{ .appStoreURL }}"><img class="badge" loading="lazy" src="/images/app-store-badge.svg"/></a>
+    </div>
+</div>
 </section>
 
 {{ template "footer.html" . }}
