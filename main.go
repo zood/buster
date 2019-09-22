@@ -9,6 +9,8 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
+	"zood.xyz/buster/email"
+	"zood.xyz/buster/mailgun"
 	"zood.xyz/buster/resources"
 )
 
@@ -16,12 +18,23 @@ func main() {
 	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
 
 	resPath := flag.String("resources", "", "Path to resources directory")
+	mailgunApiKey := flag.String("mailgun-api-key", "", "Mailgun API key")
+	mailgunDomain := flag.String("mailgun-domain", "", "Mailgun domain")
 	devMode := flag.Bool("dev", false, "true makes the server reload templates on every request. default is false.")
 	port := flag.Int("port", 1313, "Port to listen on")
 	flag.Parse()
 
 	if *resPath == "" {
 		log.Fatal("Resources path is empty")
+	}
+
+	if !*devMode {
+		if *mailgunApiKey == "" {
+			log.Fatal("mailgun api key is missing")
+		}
+		if *mailgunDomain == "" {
+			log.Fatal("mailgun domain is missing")
+		}
 	}
 
 	rsrcs, err := resources.New(*resPath)
@@ -41,6 +54,10 @@ func main() {
 	r.HandleFunc("/about", aboutHandler).Methods(http.MethodGet)
 	r.HandleFunc("/products/location", locationAppHomeHandler).Methods(http.MethodGet)
 	r.HandleFunc("/contact", contactHandler).Methods(http.MethodGet)
+	r.HandleFunc("/contact", submitContactFormHandler).Methods(http.MethodPost)
+	r.HandleFunc("/contact", contactSuccessHandler).Methods(http.MethodGet)
+	r.HandleFunc("/contact-error", contactErrorHandler).Methods(http.MethodGet)
+	r.HandleFunc("/contact-success", contactSuccessHandler).Methods(http.MethodGet)
 
 	// blog
 	r.HandleFunc("/blog", blogHomeHandler).Methods(http.MethodGet)
@@ -54,7 +71,13 @@ func main() {
 	r.NotFoundHandler = http.HandlerFunc(notFoundHandler)
 	r.MethodNotAllowedHandler = http.HandlerFunc(notFoundHandler)
 
-	r.Use(busterMiddleware{rsrcs: rsrcs}.Middleware)
+	var emailer email.SendEmailer
+	if *mailgunApiKey == "" || *mailgunDomain == "" {
+		emailer = email.NewMock()
+	} else {
+		emailer = mailgun.New(*mailgunApiKey, *mailgunDomain, false)
+	}
+	r.Use(busterMiddleware{rsrcs: rsrcs, sendEmailer: emailer}.Middleware)
 
 	var hostAddress string
 	if *devMode {

@@ -27,4 +27,8 @@ var enStrings = map[StringAsset]string{
 	HowDoISubmitAnswerMsg:                  "Each app has a built-in feedback form we’d love you to fill. Constructive feedback is always appreciated but a few kind words every now and then helps us stay motivated ;)",
 	GetInTouchWithUs:                       "Get in touch with us!",
 	GetInTouchWithUsMsg:                    "We'd like to hear what you have to say! Feedback and improvement suggestions will help us develop and make better products for you. Fill in the form below or send us an email at ",
+	ContactFormErrorMissingNameMsg:         "Your message didn't go through. You need to enter your name, otherwise we won't know how to address you.",
+	ContactFormErrorMissingEmailMsg:        "Your message didn't go through. You need to enter your email address, so we can contact you if necessary.",
+	ContactFormErrorMissingMessageMsg:      "You need to enter a message. Go back and try again.",
+	ContactFormErrorUnknownMsg:             "Hmm… something broke while trying to send your message. Go back and try again. If the problem persists, you can always send us an email at",
 }
