@@ -32,12 +32,12 @@ func disavowEmailHandler(w http.ResponseWriter, r *http.Request) {
 	endpoint := fmt.Sprintf("https://api.zood.xyz/1/email-verifications/%s", token)
 	req, err := http.NewRequest(http.MethodDelete, endpoint, nil)
 	if err != nil {
-		internalError(w, rsrcs, err)
+		internalError(w, r, err)
 		return
 	}
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
-		internalError(w, rsrcs, err)
+		internalError(w, r, err)
 		return
 	}
 	defer resp.Body.Close()
@@ -46,11 +46,11 @@ func disavowEmailHandler(w http.ResponseWriter, r *http.Request) {
 		buf, err := ioutil.ReadAll(resp.Body)
 		if err != nil {
 			err = errors.Wrapf(err, "problem reading error response while disavowing token '%s'", token)
-			internalError(w, rsrcs, err)
+			internalError(w, r, err)
 			return
 		}
 		err = errors.Errorf("problem disavowing token '%s':\noscar responded with %d: %s", token, resp.StatusCode, buf)
-		internalError(w, rsrcs, err)
+		internalError(w, r, err)
 		return
 	}
 
@@ -83,12 +83,12 @@ func verifyEmailHandler(w http.ResponseWriter, r *http.Request) {
 	endpoint := "https://api.zood.xyz/1/email-verifications"
 	req, err := http.NewRequest(http.MethodPost, endpoint, bytes.NewReader(postData))
 	if err != nil {
-		internalError(w, rsrcs, err)
+		internalError(w, r, err)
 		return
 	}
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
-		internalError(w, rsrcs, err)
+		internalError(w, r, err)
 		return
 	}
 	defer resp.Body.Close()
@@ -100,7 +100,7 @@ func verifyEmailHandler(w http.ResponseWriter, r *http.Request) {
 		}{}
 		err := json.NewDecoder(resp.Body).Decode(&errBody)
 		if err != nil {
-			internalError(w, rsrcs, err)
+			internalError(w, r, err)
 			return
 		}
 
@@ -116,7 +116,7 @@ func verifyEmailHandler(w http.ResponseWriter, r *http.Request) {
 			token,
 			errBody.Code,
 			errBody.Msg)
-		internalError(w, rsrcs, err)
+		internalError(w, r, err)
 		return
 	}
 

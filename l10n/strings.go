@@ -37,6 +37,10 @@ const (
 	HowDoISubmitAnswerMsg
 	GetInTouchWithUs
 	GetInTouchWithUsMsg
+	ContactFormErrorMissingNameMsg
+	ContactFormErrorMissingEmailMsg
+	ContactFormErrorMissingMessageMsg
+	ContactFormErrorUnknownMsg
 )
 
 // String returns a localized string matching the language
