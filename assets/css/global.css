@@ -73,18 +73,6 @@ a {
 a:visited {
   color: #3c4466;
 }
-@media screen and (max-width: 640px) {
-  .container {
-    padding: 0 8px;
-  }
-  .container * {
-    width: auto;
-  }
-  .mobile-col {
-    width: 100% !important;
-    max-width: 100%;
-  }
-}
 
 .container * {
   max-width: 100%;
@@ -152,6 +140,7 @@ header .container {
   margin-left: 1rem;
   margin-right: 0px;
   transition: 0.1s;
+  min-width: 43px;
 }
 
 .nav-links > .item::after {
@@ -276,8 +265,32 @@ hr {
 }
 
 @media screen and (max-width: 640px) {
+  .container {
+    padding: 0 8px;
+  }
+  .container * {
+    width: auto;
+  }
+  .mobile-col {
+    width: 100% !important;
+    max-width: 100%;
+  }
+  .nav-links > .item::after {
+    display: none;
+  }
+  .nav-links > .item.active::before {
+    width: 6px;
+    height: 6px;
+    margin: 2px 0;
+margin-right: 12px;
+    border-radius: 2.5px;
+    display: inline-block;
+    content: "";
+    transition: 0.3s all;
+    background-color: #5cd1ff;
+  }
   #header-logo img {
-    height: 36px;
+    height: 35px;
     width: auto;
   }
   .nav > .nav-btn {
@@ -285,31 +298,39 @@ hr {
     position: absolute;
     right: 0px;
     top: 0px;
+    z-index: 10;
   }
   .nav > .nav-btn > label {
     display: inline-block;
+    justify-items: center;
+    align-items: center;
+    padding: 0 12px;
+    padding-top: 20px;
+    margin-top: 28px;
+    margin-right: 28px;
     width: 64px;
     height: 64px;
-    padding: 22px;
+    /* padding: 22px; */
     transition: background-color 0.2s;
     cursor: pointer;
   }
-  .nav > .nav-btn > label:hover,
+  .nav > .nav-header {
+  margin-top: 1.25rem;
+  }
+ 
   .nav #nav-check:checked ~ .nav-btn > label {
-    background-color: #5cd2ff;
+    background-color: #000;
     transition: background-color 0.2s;
   }
-  .nav > .nav-btn > label > span {
+  /* .nav > .nav-btn > label > span {
     display: block;
     width: 25px;
     max-width: 25px;
     height: 10px;
     border-top: 2px solid rgba(60, 60, 60, 0.4);
-  }
+  } */
   .nav-links > .item {
-
     margin-left: 0;
-
   }
   .nav > .nav-links {
     position: absolute;
@@ -318,22 +339,39 @@ hr {
     align-items: start;
     justify-content: space-around;
     flex-direction: column;
-    width: auto;
+    width: 50vw;
     background-color: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(15px);
     opacity: 0;
     height: auto;
-border: 1px solid #d3d3d3;
+    box-shadow: 10px 10px 39px -12px rgba(0, 0, 0, 0.75);
     transition: all 0.3s ease-in-out;
     overflow-y: hidden;
-    padding: 1rem;
-    top: 64px;
-    right: 0px;
+    padding: 1.2rem 2rem;
+    top: 92px;
+    right: 28px;
   }
   .nav > .nav-links > a {
     display: block;
-
-    /* width: 100%; */
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .menu-overlay {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+  }
+  .nav > #nav-check:checked ~ .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #c8dae8;
+    mix-blend-mode: multiply;
+    opacity: 0.7;
+    transition: all 0.2s ease-in-out;
+    visibility: visible;
   }
   .nav > #nav-check:not(:checked) ~ .nav-links {
     opacity: 0;
@@ -369,8 +407,8 @@ border: 1px solid #d3d3d3;
     flex-wrap: wrap;
   }
   header {
-    height: 64px;
-    border-bottom: 1px solid #d3d3d3;
+    background: none;
+    backdrop-filter: none;
   }
 }
 
@@ -460,4 +498,89 @@ a:hover,
 .btn:hover {
   opacity: 0.8 !important;
   cursor: pointer;
+}
+
+/* HAMBURGER MENU */
+
+.hamburger {
+  display: inline-block;
+  transform: scale(.75);
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.hamburger-inner::before {
+  top: -10px;
+}
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+.hamburger--slider .hamburger-inner {
+  top: 2px;
+}
+.hamburger--slider .hamburger-inner::before {
+  top: 10px;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: 0.15s;
+}
+.hamburger--slider .hamburger-inner::after {
+  top: 20px;
+}
+
+.nav #nav-check:checked ~ .nav-btn .hamburger--slider .hamburger-inner {
+  transform: translate3d(0, 10px, 0) rotate(45deg);
+  background-color: #fff;
+}
+.nav #nav-check:checked ~ .nav-btn .hamburger--slider .hamburger-inner::before {
+  transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+  opacity: 0;
+  background-color: #fff;
+}
+.nav #nav-check:checked ~ .nav-btn .hamburger--slider .hamburger-inner::after {
+  transform: translate3d(0, -20px, 0) rotate(-90deg);
+  background-color: #fff;
 }

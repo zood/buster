@@ -31,13 +31,19 @@
       <a id="header-logo" href="/"><img role="menuitem" alt="Zood" src="/images/zood-logo.svg" /></a>
     </div>
   </div>
+
   <div class="nav-btn">
     <label for="nav-check">
-      <span></span>
-      <span></span>
-      <span></span>
+  <div class="hamburger hamburger--slider" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</div>
     </label>
-  </div><div class="nav-links">
+  </div>
+    <div class="menu-overlay"> </div>
+  <div class="nav-links">
+
                 <a role="menuitem" class="item{{ if eq .activeHeader "home" }} active{{ end }}" href="/">Home</a>
                 <a role="menuitem"  class="item{{ if eq .activeHeader "news" }} active{{ end }}" href="/blog">Blog</a>
                 <a role="menuitem"  class="item{{ if eq .activeHeader "about" }} active{{ end }}" href="/about">About</a>
