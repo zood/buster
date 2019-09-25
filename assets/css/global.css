@@ -19,12 +19,6 @@ body > .container {
   flex: 1;
 }
 
-/* .nav > .nav-header > .nav-title {
-  display: inline-block;
-  font-size: 12px;
-  color: #333;
-  padding: 10px 10px 10px 10px;
-} */
 .nav > .nav-links {
   display: flex;
 }
@@ -282,7 +276,7 @@ hr {
     width: 6px;
     height: 6px;
     margin: 2px 0;
-margin-right: 12px;
+    margin-right: 12px;
     border-radius: 2.5px;
     display: inline-block;
     content: "";
@@ -315,9 +309,10 @@ margin-right: 12px;
     cursor: pointer;
   }
   .nav > .nav-header {
-  margin-top: 1.25rem;
+    margin-top: 1.25rem;
+    padding-left: .5rem;
   }
- 
+
   .nav #nav-check:checked ~ .nav-btn > label {
     background-color: #000;
     transition: background-color 0.2s;
@@ -500,11 +495,11 @@ a:hover,
   cursor: pointer;
 }
 
-/* HAMBURGER MENU */
+/* ZOOD-MENUBTN */
 
-.hamburger {
+.zood-menubtn {
   display: inline-block;
-  transform: scale(.75);
+  transform: scale(0.75);
   cursor: pointer;
   transition-property: opacity, filter;
   transition-duration: 0.15s;
@@ -517,26 +512,25 @@ a:hover,
   margin: 0;
   overflow: visible;
 }
-.hamburger:hover {
+.zood-menubtn:hover {
   opacity: 0.7;
 }
 
-
-.hamburger-box {
+.zood-menubtn-box {
   width: 40px;
   height: 24px;
   display: inline-block;
   position: relative;
 }
 
-.hamburger-inner {
+.zood-menubtn-inner {
   display: block;
   top: 50%;
   margin-top: -2px;
 }
-.hamburger-inner,
-.hamburger-inner::before,
-.hamburger-inner::after {
+.zood-menubtn-inner,
+.zood-menubtn-inner::before,
+.zood-menubtn-inner::after {
   width: 40px;
   height: 4px;
   background-color: #000;
@@ -546,41 +540,49 @@ a:hover,
   transition-duration: 0.15s;
   transition-timing-function: ease;
 }
-.hamburger-inner::before,
-.hamburger-inner::after {
+.zood-menubtn-inner::before,
+.zood-menubtn-inner::after {
   content: "";
   display: block;
 }
-.hamburger-inner::before {
+.zood-menubtn-inner::before {
   top: -10px;
 }
-.hamburger-inner::after {
+.zood-menubtn-inner::after {
   bottom: -10px;
 }
 
-.hamburger--slider .hamburger-inner {
+.zood-menubtn--slider .zood-menubtn-inner {
   top: 2px;
 }
-.hamburger--slider .hamburger-inner::before {
+.zood-menubtn--slider .zood-menubtn-inner::before {
   top: 10px;
   transition-property: transform, opacity;
   transition-timing-function: ease;
   transition-duration: 0.15s;
 }
-.hamburger--slider .hamburger-inner::after {
+.zood-menubtn--slider .zood-menubtn-inner::after {
   top: 20px;
 }
 
-.nav #nav-check:checked ~ .nav-btn .hamburger--slider .hamburger-inner {
+.nav #nav-check:checked ~ .nav-btn .zood-menubtn--slider .zood-menubtn-inner {
   transform: translate3d(0, 10px, 0) rotate(45deg);
   background-color: #fff;
 }
-.nav #nav-check:checked ~ .nav-btn .hamburger--slider .hamburger-inner::before {
+.nav
+  #nav-check:checked
+  ~ .nav-btn
+  .zood-menubtn--slider
+  .zood-menubtn-inner::before {
   transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
   opacity: 0;
   background-color: #fff;
 }
-.nav #nav-check:checked ~ .nav-btn .hamburger--slider .hamburger-inner::after {
+.nav
+  #nav-check:checked
+  ~ .nav-btn
+  .zood-menubtn--slider
+  .zood-menubtn-inner::after {
   transform: translate3d(0, -20px, 0) rotate(-90deg);
   background-color: #fff;
 }
