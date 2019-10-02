@@ -19,6 +19,12 @@
   flex-grow: 1;
 }
 @media screen and (max-width: 640px) {
+  .container p {
+    padding: 0 2rem;
+    }
+    .privacy-policy p {
+      padding: 0;
+    }
   .hero-section {
     flex-wrap: wrap;
   }

@@ -131,7 +131,7 @@ header .container {
   font-family: "Montserrat";
   font-size: 1.125rem;
   line-height: 2.33;
-  margin-left: 1rem;
+  margin-left: 3rem;
   margin-right: 0px;
   transition: 0.1s;
   min-width: 43px;
@@ -260,8 +260,9 @@ hr {
 
 @media screen and (max-width: 640px) {
   .container {
-    padding: 0 8px;
+    padding: 0 1rem;
   }
+
   .container * {
     width: auto;
   }
