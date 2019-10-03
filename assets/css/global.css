@@ -266,6 +266,7 @@ hr {
   .container * {
     width: auto;
   }
+
   .mobile-col {
     width: 100% !important;
     max-width: 100%;
@@ -411,6 +412,9 @@ hr {
 @media screen and (min-width: 641px) and (max-width: 1024px) {
   .container {
     padding: 0 3rem;
+  }
+  header .container {
+    padding: 0 2rem;
   }
   footer,
   section.privacy-policy {
