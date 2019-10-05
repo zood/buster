@@ -23,12 +23,32 @@
         </head>
         <body class="zood-site">
         <header>
-        <div class="container">  <a id="header-logo" href="/"><img role="menuitem" alt="Zood" src="/images/zood-logo.svg" /></a>
-            <nav aria-label="Zood Location" id="menu">
+        <div class="container">  
+            <nav class="nav" aria-label="Zood Location" id="menu">
+              <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+      <a id="header-logo" href="/"><img role="menuitem" alt="Zood" src="/images/zood-logo.svg" /></a>
+    </div>
+  </div>
+
+  <div class="nav-btn">
+    <label for="nav-check">
+  <div class="zood-menubtn zood-menubtn--slider" type="button">
+  <span class="zood-menubtn-box">
+    <span class="zood-menubtn-inner"></span>
+  </span>
+</div>
+    </label>
+  </div>
+    <div class="menu-overlay"> </div>
+  <div class="nav-links">
+
                 <a role="menuitem" class="item{{ if eq .activeHeader "home" }} active{{ end }}" href="/">Home</a>
                 <a role="menuitem"  class="item{{ if eq .activeHeader "news" }} active{{ end }}" href="/blog">Blog</a>
                 <a role="menuitem"  class="item{{ if eq .activeHeader "about" }} active{{ end }}" href="/about">About</a>
                 <a role="menuitem"  class="item{{ if eq .activeHeader "contact" }} active{{ end }}" href="/contact">Contact</a>
+                </div>
             </nav></div>
           
         </header>

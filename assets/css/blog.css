@@ -64,6 +64,17 @@ h1 {
 .container.news {
   padding-top: 2.5rem;
 }
+
+@media screen and (max-width: 640px) {
+.blog-grid {
+  padding: 0 2rem;
+}
+.article-content {
+  margin: 2rem 2rem;
+}
+}
+
+
 /*! article-content.css v0.0.3 | MIT License | github.com/jgthms/article-content.css */
 .article-content {
   line-height: 1.6;
