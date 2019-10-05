@@ -14,6 +14,18 @@
 body > .container {
   flex: 1;
 }
+.nav > .nav-header {
+  display: inline;
+  flex: 1;
+}
+
+.nav > .nav-links {
+  display: flex;
+}
+.nav > .nav-btn {
+  display: none;
+}
+
 @font-face {
   font-family: "Lato";
   font-style: normal;
@@ -55,18 +67,6 @@ a {
 a:visited {
   color: #3c4466;
 }
-@media screen and (max-width: 640px) {
-  .container {
-    padding: 0 8px;
-  }
-  .container * {
-    width: auto;
-  }
-  .mobile-col {
-    width: 100% !important;
-    max-width: 100%;
-  }
-}
 
 .container * {
   max-width: 100%;
@@ -93,7 +93,6 @@ header {
   justify-items: center;
   top: 0;
   padding: 1rem;
-  overflow: hidden;
 }
 .container {
   width: 1000px;
@@ -113,28 +112,32 @@ header .container {
   height: 50px;
   width: auto;
 }
+.nav > #nav-check {
+  display: none;
+}
 
 #menu {
   margin-top: auto;
   margin-bottom: auto;
-  width: 422px;
+  width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
-#menu > .item {
+.nav-links > .item {
   color: #999;
   text-decoration: none;
   font-weight: 800;
   font-family: "Montserrat";
   font-size: 1.125rem;
   line-height: 2.33;
-  margin-left: 1rem;
+  margin-left: 3rem;
   margin-right: 0px;
   transition: 0.1s;
+  min-width: 43px;
 }
 
-#menu > .item::after {
+.nav-links > .item::after {
   width: 18px;
   height: 5px;
   border-radius: 2.5px;
@@ -144,21 +147,21 @@ header .container {
   background-color: #cccccc;
 }
 
-#menu > .item:hover::after {
+.nav-links > .item:hover::after {
   width: 43px;
   transition: 0.3s all;
 }
 
-#menu > .active.item::after {
+.nav-links > .active.item::after {
   width: 43px;
   background-color: #5cd2ff;
   transition: 0.3s all;
 }
-#menu > .active.item {
+.nav-links > .active.item {
   color: #444;
   pointer-events: none;
 }
-#menu > .item:hover {
+.nav-links > .item:hover {
   color: #333;
 }
 
@@ -256,6 +259,130 @@ hr {
 }
 
 @media screen and (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .container * {
+    width: auto;
+  }
+
+  .mobile-col {
+    width: 100% !important;
+    max-width: 100%;
+  }
+  .nav-links > .item::after {
+    display: none;
+  }
+  .nav-links > .item.active::before {
+    width: 6px;
+    height: 6px;
+    margin: 2px 0;
+    margin-right: 12px;
+    border-radius: 2.5px;
+    display: inline-block;
+    content: "";
+    transition: 0.3s all;
+    background-color: #5cd1ff;
+  }
+  #header-logo img {
+    height: 35px;
+    width: auto;
+  }
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 10;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    justify-items: center;
+    align-items: center;
+    padding: 0 12px;
+    padding-top: 20px;
+    margin-top: 28px;
+    margin-right: 28px;
+    width: 64px;
+    height: 64px;
+    /* padding: 22px; */
+    transition: background-color 0.2s;
+    cursor: pointer;
+  }
+  .nav > .nav-header {
+    margin-top: 1.25rem;
+    padding-left: .5rem;
+  }
+
+  .nav #nav-check:checked ~ .nav-btn > label {
+    background-color: #000;
+    transition: background-color 0.2s;
+  }
+  /* .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    max-width: 25px;
+    height: 10px;
+    border-top: 2px solid rgba(60, 60, 60, 0.4);
+  } */
+  .nav-links > .item {
+    margin-left: 0;
+  }
+  .nav > .nav-links {
+    position: absolute;
+
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 50vw;
+    background-color: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(15px);
+    opacity: 0;
+    height: auto;
+    box-shadow: 10px 10px 39px -12px rgba(0, 0, 0, 0.75);
+    transition: all 0.3s ease-in-out;
+    overflow-y: hidden;
+    padding: 1.2rem 2rem;
+    top: 92px;
+    right: 28px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .menu-overlay {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+  }
+  .nav > #nav-check:checked ~ .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #c8dae8;
+    mix-blend-mode: multiply;
+    opacity: 0.7;
+    transition: all 0.2s ease-in-out;
+    visibility: visible;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease-in-out;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: auto;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+    visibility: visible;
+    overflow-y: auto;
+  }
+
   .feature h4 {
     text-align: center;
   }
@@ -276,11 +403,18 @@ hr {
   .feature {
     flex-wrap: wrap;
   }
+  header {
+    background: none;
+    backdrop-filter: none;
+  }
 }
 
 @media screen and (min-width: 641px) and (max-width: 1024px) {
   .container {
     padding: 0 3rem;
+  }
+  header .container {
+    padding: 0 2rem;
   }
   footer,
   section.privacy-policy {
@@ -364,4 +498,96 @@ a:hover,
 .btn:hover {
   opacity: 0.8 !important;
   cursor: pointer;
+}
+
+/* ZOOD-MENUBTN */
+
+.zood-menubtn {
+  display: inline-block;
+  transform: scale(0.75);
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+.zood-menubtn:hover {
+  opacity: 0.7;
+}
+
+.zood-menubtn-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.zood-menubtn-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+.zood-menubtn-inner,
+.zood-menubtn-inner::before,
+.zood-menubtn-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.zood-menubtn-inner::before,
+.zood-menubtn-inner::after {
+  content: "";
+  display: block;
+}
+.zood-menubtn-inner::before {
+  top: -10px;
+}
+.zood-menubtn-inner::after {
+  bottom: -10px;
+}
+
+.zood-menubtn--slider .zood-menubtn-inner {
+  top: 2px;
+}
+.zood-menubtn--slider .zood-menubtn-inner::before {
+  top: 10px;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: 0.15s;
+}
+.zood-menubtn--slider .zood-menubtn-inner::after {
+  top: 20px;
+}
+
+.nav #nav-check:checked ~ .nav-btn .zood-menubtn--slider .zood-menubtn-inner {
+  transform: translate3d(0, 10px, 0) rotate(45deg);
+  background-color: #fff;
+}
+.nav
+  #nav-check:checked
+  ~ .nav-btn
+  .zood-menubtn--slider
+  .zood-menubtn-inner::before {
+  transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+  opacity: 0;
+  background-color: #fff;
+}
+.nav
+  #nav-check:checked
+  ~ .nav-btn
+  .zood-menubtn--slider
+  .zood-menubtn-inner::after {
+  transform: translate3d(0, -20px, 0) rotate(-90deg);
+  background-color: #fff;
 }
