@@ -69,17 +69,18 @@ func locationAppHomeHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func mobileAppsPrivacyHandler(w http.ResponseWriter, r *http.Request) {
+	tag := l10n.MatchLanguage(r)
 	rsrcs := resourcesFromContext(r.Context())
 	rsrcs.ExecuteTemplate("privacy-mobile-apps.html", w, map[string]interface{}{
 		"title":                      "Mobile Apps Privacy Policy | Zood",
 		"activeHeader":               "privacymobile",
 		"cssPath":                    "/css/privacy-mobile-apps.css",
-		"MobileAppsPrivacyPolicy":    "Mobile Apps Privacy Policy",
-		"MobileAppsPrivacyPolicyMsg": "Everything we build aims to increase, or at the very least preserve, your privacy. When you use Zood Location, the information that you share with your family+friends is shared with them only using end-to-end encryption. That means we don't know anything about your location, so we can't spy on your or sell your data, and nobody can compel us to reveal your location either.",
-		"StuffWeKnowAboutYou":        "Stuff we know about you",
-		"StuffWeKnowAboutYouMsg":     "Email Address: Upon registering an account, you may optionally provide your email address. When you do so, we send you an email with a verification link to make sure we have the correct address. The email address will only be used to contact you with important information about your account (like resetting your account if you forgot your password). We won't send you any spam, sell your email address, or share it with any 3rd parties.",
-		"StuffWeBackupForYou":        "Stuff we backup for you",
-		"StuffWeBackupForYouMsg":     "To make it easy for you to switch phones, Zood Location sends an encrypted backup of your database of friends to our server. It's encrypted with a key derived from your password (which we also don't know), so to us it's just a blob of random data that we hold just for you. That's it! No trickery here. Just a simple service that lets you (and only you) know where your loved ones are all the time.",
+		"MobileAppsPrivacyPolicy":    l10n.String(tag, l10n.MobileAppsPrivacyPolicy),
+		"MobileAppsPrivacyPolicyMsg": l10n.String(tag, l10n.MobileAppsPrivacyPolicyMsg),
+		"StuffWeKnowAboutYou":        l10n.String(tag, l10n.StuffWeKnowAboutYou),
+		"StuffWeKnowAboutYouMsg":     l10n.String(tag, l10n.StuffWeKnowAboutYouMsg),
+		"StuffWeBackupForYou":        l10n.String(tag, l10n.StuffWeBackupForYou),
+		"StuffWeBackupForYouMsg":     l10n.String(tag, l10n.StuffWeBackupForYouMsg),
 	})
 }
 
