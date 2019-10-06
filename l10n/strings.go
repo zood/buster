@@ -41,6 +41,12 @@ const (
 	ContactFormErrorMissingEmailMsg
 	ContactFormErrorMissingMessageMsg
 	ContactFormErrorUnknownMsg
+	MobileAppsPrivacyPolicy
+	MobileAppsPrivacyPolicyMsg
+	StuffWeKnowAboutYou
+	StuffWeKnowAboutYouMsg
+	StuffWeBackupForYou
+	StuffWeBackupForYouMsg
 )
 
 // String returns a localized string matching the language
