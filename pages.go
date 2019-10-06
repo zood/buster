@@ -69,11 +69,18 @@ func locationAppHomeHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func mobileAppsPrivacyHandler(w http.ResponseWriter, r *http.Request) {
+	tag := l10n.MatchLanguage(r)
 	rsrcs := resourcesFromContext(r.Context())
 	rsrcs.ExecuteTemplate("privacy-mobile-apps.html", w, map[string]interface{}{
-		"title":        "Mobile Apps Privacy Policy | Zood",
-		"activeHeader": "privacymobile",
-		"cssPath":      "/css/privacy-mobile-apps.css",
+		"title":                      "Mobile Apps Privacy Policy | Zood",
+		"activeHeader":               "privacymobile",
+		"cssPath":                    "/css/privacy-mobile-apps.css",
+		"MobileAppsPrivacyPolicy":    l10n.String(tag, l10n.MobileAppsPrivacyPolicy),
+		"MobileAppsPrivacyPolicyMsg": l10n.String(tag, l10n.MobileAppsPrivacyPolicyMsg),
+		"StuffWeKnowAboutYou":        l10n.String(tag, l10n.StuffWeKnowAboutYou),
+		"StuffWeKnowAboutYouMsg":     l10n.String(tag, l10n.StuffWeKnowAboutYouMsg),
+		"StuffWeBackupForYou":        l10n.String(tag, l10n.StuffWeBackupForYou),
+		"StuffWeBackupForYouMsg":     l10n.String(tag, l10n.StuffWeBackupForYouMsg),
 	})
 }
 

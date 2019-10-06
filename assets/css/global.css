@@ -254,8 +254,8 @@ hr {
   color: #666;
 }
 .feature img {
-  width: 300px;
-  height: auto;
+  width: auto;
+  height: 200px;
 }
 
 @media screen and (max-width: 640px) {

@@ -1,17 +1,35 @@
 {{ template "header.html" . }}
+<section class="feature intro">
 
-<section id="main">
-    <p>Mobile Apps Privacy Policy</p>
-    <p class="policy-text">Everything we build aims to increase, or at the very least preserve, your privacy. When you use Zood Location, the information that you share with your family+friends is shared with them only using end-to-end encryption. That means we don't know anything about your location, so we can't spy on your or sell your data, and nobody can compel us to reveal your location either.</p>
+    <div>
+        <h4>{{ .MobileAppsPrivacyPolicy }}</h4>
 
-    <p class="policy-section-title">Stuff we know about you</p>
-    <p class="policy-text"><strong>Email Address:</strong> Upon registering an account, you may <strong>optionally</strong> provide your email address. When you do so, we send you an email with a verification link to make sure we have the correct address. The email address will only be used to contact you with important information about your account (like resetting your account if you forgot your password). We won't send you any spam, sell your email address, or share it with any 3rd parties.</p>
+        <p>{{ .MobileAppsPrivacyPolicyMsg }}</p>
 
-    <p class="policy-section-title">Stuff we backup for you</p>
-    <p class="policy-text">To make it easy for you to switch phones, Zood Location sends an encrypted backup of your database of friends to our server. It's encrypted with a key derived from your password (which we also don't know), so to us it's just a blob of random data that we hold just for you.</p>
-    <br/>
-
-    <p class="policy-text">That's it! No trickery here. Just a simple service that lets you (and only you) know where your loved ones are all the time.</p>
+    </div>
 </section>
 
+<section class="feature feature-intro">
+    <div class="img"><img loading="lazy" class="mobile-col" src="/images/website_stuff_we_know.svg" alt="{{ .StuffWeKnowAboutYou }}"></div>
+
+    <div>
+        <h4>{{ .StuffWeKnowAboutYou }}</h4>
+
+        <p>{{ .StuffWeKnowAboutYouMsg }}</p>
+
+    </div>
+
+</section>
+<section class="feature feature-intro">
+    <div class="img"><img loading="lazy" class="mobile-col" src="/images/website_stuff_we_backup.svg" alt="{{ .StuffWeBackupForYou }}"></div>
+
+    <div>
+        <h4>{{ .StuffWeBackupForYou }}</h4>
+
+        <p>{{ .StuffWeBackupForYouMsg }}</p>
+
+    </div>
+
+</section>
+z
 {{ template "footer.html" . }}
