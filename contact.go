@@ -2,10 +2,7 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"log"
-	"mime"
-	"mime/multipart"
 	"net/http"
 	"strings"
 
@@ -51,64 +48,29 @@ func contactSuccessHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func parseContactForm(r *http.Request) (name, email, msg *string, err error) {
-	mediaType, params, err := mime.ParseMediaType(r.Header.Get("Content-Type"))
-	if err != nil {
-		return nil, nil, nil, fmt.Errorf("while parsing media type: %w", err)
-	}
+	nameVal := r.FormValue("name")
+	emailVal := r.FormValue("email")
+	msgVal := r.FormValue("message")
 
-	if !strings.HasPrefix(mediaType, "multipart/") {
-		return nil, nil, nil, fmt.Errorf("not a multipart form - is '%s'", mediaType)
-	}
-
-	var nameData []byte
-	var emailData []byte
-	var msgData []byte
-
-	limitReader := io.LimitReader(r.Body, 64*1024)
-	mr := multipart.NewReader(limitReader, params["boundary"])
-	for {
-		p, err := mr.NextPart()
-		if err == io.EOF {
-			break
+	if len(nameVal) != 0 {
+		nameVal = strings.TrimSpace(nameVal)
+		if nameVal != "" {
+			name = &nameVal
 		}
-		if err != nil {
-			return nil, nil, nil, fmt.Errorf("while parsing form: %w", err)
+	}
+	if len(emailVal) != 0 {
+		emailVal = strings.TrimSpace(emailVal)
+		if emailVal != "" {
+			email = &emailVal
 		}
-		switch p.FormName() {
-		case "name":
-			p.Read(nameData)
-		case "email":
-			p.Read(emailData)
-		case "message":
-			p.Read(msgData)
-		default:
-			continue
+	}
+	if len(msgVal) != 0 {
+		msgVal = strings.TrimSpace(msgVal)
+		if msgVal != "" {
+			msg = &msgVal
 		}
 	}
 
-	if len(nameData) != 0 {
-		tmp := string(nameData)
-		tmp = strings.TrimSpace(tmp)
-		if tmp != "" {
-			name = &tmp
-		}
-	}
-	if len(emailData) != 0 {
-		tmp := string(emailData)
-		tmp = strings.TrimSpace(tmp)
-		if tmp != "" {
-			email = &tmp
-		}
-	}
-	if len(msgData) != 0 {
-		tmp := string(msgData)
-		tmp = strings.TrimSpace(tmp)
-		if tmp != "" {
-			msg = &tmp
-		}
-	}
-
-	err = nil
 	return
 }
 
