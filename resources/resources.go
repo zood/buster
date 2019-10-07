@@ -128,11 +128,11 @@ func (r *Resources) PostAssetPath(postID int, asset string) string {
 	return filepath.Join(r.path, "posts", strconv.Itoa(postID), asset)
 }
 
-func (r *Resources) PostBody(id int) string {
+func (r *Resources) PostBody(id int) template.HTML {
 	if r.DevMode {
 		if err := r.loadAll(); err != nil {
 			log.Printf("Unable to reload posts: %v", err)
-			return fmt.Sprintf("<error reloading posts: %v>", err)
+			return template.HTML(fmt.Sprintf("<error reloading posts: %v>", err))
 		}
 	}
 
@@ -142,7 +142,7 @@ func (r *Resources) PostBody(id int) string {
 		return "<not found>"
 	}
 
-	return string(htmlBytes)
+	return template.HTML(string(htmlBytes))
 }
 
 func (r *Resources) PostById(id int) *Post {

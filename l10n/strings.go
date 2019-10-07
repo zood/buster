@@ -54,7 +54,7 @@ const (
 func String(tag language.Tag, asset StringAsset) string {
 	s, ok := enStrings[asset]
 	if !ok {
-		log.Printf("WARNING: no string found for asset '%d'", asset)
+		log.Printf("WARNING: no entry found for string asset '%d'", asset)
 		return "<undefined>"
 	}
 

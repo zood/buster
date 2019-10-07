@@ -79,6 +79,7 @@ func main() {
 	}
 	r.Use(busterMiddleware{rsrcs: rsrcs, sendEmailer: emailer}.Middleware)
 
+	// playground()
 	var hostAddress string
 	if *devMode {
 		hostAddress = fmt.Sprintf(":%d", *port)
@@ -96,3 +97,8 @@ func main() {
 	log.Printf("Starting app on port %d…", *port)
 	log.Fatal(server.ListenAndServe())
 }
+
+// func playground() {
+// 	output := blackfriday.Run([]byte("string"))
+// 	log.Printf("output: '%s'", output)
+// }
