@@ -25,7 +25,12 @@ func contactErrorHandler(w http.ResponseWriter, r *http.Request) {
 		errMsg = l10n.String(tag, l10n.ContactFormErrorUnknownMsg)
 	}
 	rsrcs.ExecuteTemplate("contact-error.html", w, map[string]interface{}{
-		"errorMessage": errMsg,
+		"title":               "Contact | Zood",
+		"activeHeader":        "contact",
+		"cssPath":             "/css/contact.css",
+		"GetInTouchWithUs":    l10n.String(tag, l10n.GetInTouchWithUs),
+		"GetInTouchWithUsMsg": l10n.String(tag, l10n.GetInTouchWithUsMsg),
+		"errorMessage":        errMsg,
 	})
 }
 
@@ -44,7 +49,11 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
 func contactSuccessHandler(w http.ResponseWriter, r *http.Request) {
 	// tag := l10n.MatchLanguage(r)
 	rsrcs := resourcesFromContext(r.Context())
-	rsrcs.ExecuteTemplate("contact-success.html", w, map[string]interface{}{})
+	rsrcs.ExecuteTemplate("contact-success.html", w, map[string]interface{}{
+		"title":        "Thanks for Contacting Us | Zood",
+		"activeHeader": "contact",
+		"cssPath":      "/css/contact.css",
+	})
 }
 
 func parseContactForm(r *http.Request) (name, email, msg *string, err error) {
