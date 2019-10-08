@@ -1,5 +1,40 @@
-<html>
-    <body>
-        <p>{{ .errorMessage }}</p>
-    </body>
-</html>
+{{ template "header.html" . }}
+
+<section class="feature">
+    <div class="img">           <img loading="lazy" class="error-img"  alt="error" src="/images/error.svg"></div>
+
+    <div>
+    <div class="error">
+  <h4>{{ .errorMessage }}
+        </h4>
+</div>
+        <p>{{ .GetInTouchWithUsMsg }}
+            <a href="mailto:hello@zoodxyz.com">hello@zoodxyz.com</a>.</p>
+
+    </div>
+</section>
+<section class="form">
+
+    <form action="/contact" method="POST">
+        <div class="form-group">
+            <label for="name">Name <span class="alert">*</span></label>
+            <input placeholder="John Doe" name="name" type="text" id="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email <span class="alert">*</span></label>
+            <input type="email" placeholder="john@doe.com" name="email" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea rows="6" placeholder="What's on your mind?" name="message" id="message"></textarea>
+        </div>
+        <div class="form-group">
+            <button class="btn" type="submit">Send</button>
+        </div>
+        <div class="form-group error">
+  
+        </div>
+    </form>
+</section>
+{{ template "footer.html" . }}
+

@@ -1,5 +1,30 @@
+.alert {
+  color:#ff5d58;
+}
+.contact .error {
+  color: #ff5d58;
+  display: flex;
+  align-items: center;
+  flex-wrap: 1;
+  width: 500px;
+  max-width: 100%;
+  font-size: 1rem;
+  line-height: 1.56rem;
+  font-weight: bold;
+  flex-direction: row;
+}
+.error h4 {
+  display: inline-block;
+  flex-grow: 1; 
+  line-height: 1.25;
+  color: #ff5d58;
+}
 .form-group {
   margin-bottom: 3rem;
+  font-size: 1.25rem;
+  font-family: Lato, sans-serif;
+
+
 }
 .contact img {
   max-width: 250px;
@@ -20,7 +45,7 @@
 }
 .form-group input,
 .form-group textarea {
-  font-size: 1.25rem;
+  font-size: inherit;
   padding: 1rem;
   width: 100%;
   color: #666;
@@ -30,19 +55,19 @@
   max-width: 100%;
   outline: none;
   border: solid 2px #ccc;
-  transition: all 0.1s ease-in-out;
+  transition: box-shadow 0.1s ease-in-out,border 0.1s ease-in-out;
 }
+
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: #ccc;
-  transition: all 0.1s ease-in-out;
 }
 .form-group input:focus,
 .form-group textarea:focus {
   border: solid 2px #5cd1ff;
   border-radius: 0.75rem;
   box-shadow: 0 0 4px 2px rgba(92, 209, 255, 0.8);
-  transition: all 0.1s ease-in-out;
+  transition: box-shadow 0.1s ease-in-out,border 0.1s ease-in-out;
 }
 .btn {
   padding: 0.5rem 2rem;
@@ -91,4 +116,14 @@
     max-width: 100%;
     min-width: 180px;
   }
+}
+.contact .error-img {
+  margin-right: .5rem;
+  max-width: 250px;
+  width: auto;
+  height: 200px;
+  object-fit: contain;
+}
+.errormsg {
+  flex:1;
 }

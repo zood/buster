@@ -1,5 +1,15 @@
-<html>
-    <body>
-            <p>👍 Great success! 👍</p>
-    </body>
-</html>
+{{ template "header.html" . }}
+
+<section class="feature">
+    <div class="img"><img loading="lazy" class="mobile-col" src="/images/success.svg" alt="Success"></div>
+
+    <div>
+        <h4>Thanks!
+        </h4>
+
+        <p>Your message has been successfully sent, we’ll get back to you shortly.</p>
+
+    </div>
+</section>
+
+{{ template "footer.html" . }}

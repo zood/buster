@@ -18,7 +18,7 @@
   transition: 0.15s box-shadow ease-in-out;
 }
 .blog-grid article .excerpt {
-  font-family: Lato;
+  font-family: Lato, sans-serif;
   font-size: 1rem;
   flex: 1;
   color: #666;
