@@ -21,6 +21,10 @@
 }
 .form-group {
   margin-bottom: 3rem;
+  font-size: 1.25rem;
+  font-family: Lato, sans-serif;
+
+
 }
 .contact img {
   max-width: 250px;
@@ -41,7 +45,7 @@
 }
 .form-group input,
 .form-group textarea {
-  font-size: 1.25rem;
+  font-size: inherit;
   padding: 1rem;
   width: 100%;
   color: #666;
@@ -53,6 +57,7 @@
   border: solid 2px #ccc;
   transition: box-shadow 0.1s ease-in-out,border 0.1s ease-in-out;
 }
+
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: #ccc;
