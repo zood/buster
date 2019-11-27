@@ -13,7 +13,7 @@ func contactErrorHandler(w http.ResponseWriter, r *http.Request) {
 	tag := l10n.MatchLanguage(r)
 	rsrcs := resourcesFromContext(r.Context())
 	cause := r.URL.Query().Get("error")
-	var errMsg string
+	var errMsg interface{}
 	switch cause {
 	case "missing-name":
 		errMsg = l10n.String(tag, l10n.ContactFormErrorMissingNameMsg)

@@ -1,6 +1,9 @@
 package l10n
 
-var enStrings = map[StringAsset]string{
+import "html/template"
+
+// Should only be populated by string or template.HTML objects
+var enStrings = map[StringAsset]interface{}{
 	ThePrivacyCompany:                      "The Privacy Company",
 	CompanyDescriptionMsg:                  "Living a connected life does not require giving up your privacy. Our mission is to build products and services that are a delight to use, while also respecting your privacy.",
 	ShareYourLocation:                      "Share Your Location",
@@ -14,17 +17,17 @@ var enStrings = map[StringAsset]string{
 	Really:                                 "Really.",
 	AboutPrivacyMsg:                        "Zood launched in 2019 and is building apps and services for people that let them live a connected life without having to sacrifice their privacy. Most internet companies make money by collecting information about you, then selling that information and/or using it to sell your eyeballs and sanity to the highest bidder.",
 	ZoodIsDifferent:                        "Zood is different",
-	AboutDifferentMsg:                      "We don't sell your data. Our mission is simple: build apps and services that help people live their life and charge a fair price for it. We don't treat our users like eyeballs for staring at ads.",
+	AboutDifferentMsg:                      "We don't sell your data. Our mission is simple: build apps and services that help people live their life and charge a fair price for it. We don't treat our users like eyeballs for ads or demographics to be manipulated.",
 	DidWeMentionTheEncryptionInterrogative: "Did we mention the encryption?",
 	AboutEncryptionMsg:                     "All Zood products comes with end-to-end encryption, so you don't even have to trust us to not sell you out. Our first product, Zood Location, is now available and we're hoping to make more privacy preserving/enhancing services in the future.",
 	LotsOfServicesSecureQuestionMsg:        "Lots of services say they are \"secure\". How can I trust Zood?",
 	LotsOfServicesSecureAnswerMsg:          "You don't have to trust Zood, because we use end-to-end encryption to protect your data. That means all your data is encrypted before it ever leaves your phone, so you don't have to trust us to not sell you out.",
 	WhenZoodLocationReleasedQuestionMsg:    "When will Zood Location be fully released?",
-	WhenZoodLocationReleasedAnswerMsg:      "We plan to release the Android app in autumn 2019. Shortly after that we’ll prepare the launch for iOS.",
+	WhenZoodLocationReleasedAnswerMsg:      "Soon…ish. We want to make sure we take our time and get this right. But if you don't mind jumping through a small hoop, you can use the apps while they are in beta by opting into the Google Play beta channel (Android), or Testflight beta (iOS). It doesn't have every feature that we want to build in it yet, but the apps are already more than good enough for simple location sharing amongst family members. Just click the appropriate download link below to get started.",
 	IfYouDontSurveilQuestionMsg:            "If you don't surveil users to sell advertising, how do you make money?",
 	IfYouDontSurveilAnswerMsg:              "By charging customers a modest fee to use Zood services.",
 	HowDoISubmitQuestionMsg:                "How do I submit feedback regarding your services?",
-	HowDoISubmitAnswerMsg:                  "Each app has a built-in feedback form we’d love you to fill. Constructive feedback is always appreciated but a few kind words every now and then helps us stay motivated ;)",
+	HowDoISubmitAnswerMsg:                  template.HTML(`Send us an email at <a href="mailto:hello@zood.xyz">hello@zood.xyz</a> or a message from <a href="/contact">the contact page</a>. Constructive feedback is always appreciated but a few kind words every now and then helps us stay motivated. 😊`),
 	GetInTouchWithUs:                       "Get in touch with us!",
 	GetInTouchWithUsMsg:                    "We'd like to hear what you have to say! Feedback and improvement suggestions will help us develop and make better products for you. Fill in the form below or send us an email at ",
 	ContactFormErrorMissingNameMsg:         "Your message didn't go through. You need to enter your name, otherwise we won't know how to address you.",

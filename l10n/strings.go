@@ -49,9 +49,9 @@ const (
 	StuffWeBackupForYouMsg
 )
 
-// String returns a localized string matching the language
+// String returns a localized string or template.HTML matching the language
 // represented by tag
-func String(tag language.Tag, asset StringAsset) string {
+func String(tag language.Tag, asset StringAsset) interface{} {
 	s, ok := enStrings[asset]
 	if !ok {
 		log.Printf("WARNING: no entry found for string asset '%d'", asset)
