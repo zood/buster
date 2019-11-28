@@ -3,15 +3,29 @@
     <head>
         <link href="/css/global.css" rel="stylesheet" />
         <link href="{{ .cssPath }}" rel="stylesheet" />
+        
+        <!-- BEGIN FAVICON NIGHTMARE -->
+        <!-- Compliments of https://realfavicongenerator.net -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+        <link rel="manifest" href="/images/favicons/site.webmanifest">
+        <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5cd1ff">
+        <link rel="shortcut icon" href="/images/favicons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#5cd1ff">
+        <meta name="msapplication-config" content="/images/favicons/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+        <!-- END FAVICON NIGHTMARE -->
+
         <title>{{ .title }}</title>
         <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "url": "https://zood.xyz",
-  "logo": "https://zood.xyz/images/default-og-image-1024w.png"
-}
-</script>
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "url": "https://zood.xyz",
+            "logo": "https://zood.xyz/images/default-og-image-1024w.png"
+          }
+        </script>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="referrer" content="no-referrer">
         <meta property="og:title" content="{{ .title }}" />
