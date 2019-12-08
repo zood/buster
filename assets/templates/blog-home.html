@@ -4,7 +4,7 @@
 {{ range .posts }}
 
 <article><a href="/blog/{{.ID}}/{{.Slug}}"><h2>{{.Title}}</h2></a>
-<div class="date">JUNE 5</div>
+<div class="date">{{.MonthDayYear}}</div>
 <div class="excerpt">{{.Intro}}</div>
 <p><a class="btn" href="/blog/{{.ID}}/{{.Slug}}">Read more</a></p></article>
 {{ end }}

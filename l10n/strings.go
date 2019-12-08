@@ -18,7 +18,7 @@ const (
 	SafeAndSecure
 	SafeDescriptionMsg
 	TrustedDescriptionMsg
-	AddOnlyTrustedFriends
+	OnlyAddTrustedFriends
 	ZoodLocationBlurbMsg
 	ItsAboutPrivacy
 	Really
@@ -47,6 +47,7 @@ const (
 	StuffWeKnowAboutYouMsg
 	StuffWeBackupForYou
 	StuffWeBackupForYouMsg
+	WhosBehindZoodInterrogative
 )
 
 // String returns a localized string or template.HTML matching the language
