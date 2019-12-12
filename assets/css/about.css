@@ -1,12 +1,15 @@
 .container.about {
   padding-top: 2.5rem;
 }
+
 .pop {
   color: #5cd1ff;
 }
+
 .about .feature img {
   width: 250px;
 }
+
 .about .feature {
   margin-top: 7.5rem;
   align-items: center;
@@ -18,20 +21,25 @@
   align-items: center;
   flex-grow: 1;
 }
+
 @media screen and (max-width: 640px) {
   .about .feature {
     margin-top: 2.5rem;
   }
-  .container p,.feature h4 {
-    padding: 0 2rem;
-    }
 
-    .privacy-policy p {
-      padding: 0;
-    }
+  .container p,
+  .feature h4 {
+    padding: 0 2rem;
+  }
+
+  .privacy-policy p {
+    padding: 0;
+  }
+
   .hero-section {
     flex-wrap: wrap;
   }
+
   .feature {
     flex-wrap: wrap;
   }
@@ -42,10 +50,12 @@
     margin: 0 auto 1rem auto;
   }
 }
+
 @media screen and (min-width: 641px) and (max-width: 1024px) {
   .hero-section {
     flex-wrap: wrap;
   }
+
   .feature {
     flex-wrap: wrap;
   }
@@ -55,6 +65,7 @@
     max-width: 40%;
     margin: auto 0;
   }
+
   .about .feature:first-child {
     margin-top: 1rem;
   }
