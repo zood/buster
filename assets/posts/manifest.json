@@ -5,5 +5,13 @@
         "title": "Getting ready for the beta launch",
         "intro": "In anticipation of announcing Zood to more of the world, we've launched our new website.",
         "date": 1575765438
+    },
+    {
+        "id": 2,
+        "slug": "android-app-launch",
+        "title": "Zood for Android now available",
+        "intro": "Safely sharing your location with your close friends and family doesn't need to be difficult.\ 
+        Learn more about Zood Location and see if ",
+        "date": 1575765438
     }
 ]
