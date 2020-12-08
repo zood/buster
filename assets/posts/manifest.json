@@ -1,9 +1,16 @@
 [
     {
         "id": 1,
-        "slug": "new-website",
+        "slug": "getting-ready-for-the-beta-launch",
         "title": "Getting ready for the beta launch",
         "intro": "In anticipation of announcing Zood to more of the world, we've launched our new website.",
         "date": 1575765438
+    },
+    {
+        "id": 2,
+        "slug": "zood-location-available-for-android",
+        "title": "Zood Location available for Android",
+        "intro": "Today we're publicly releasing Zood Location for Android. This has been the culmination of several years of (part-time) work in the hopes of releasing something easy enough for family members to use, while remaining secure.",
+        "date": 1607446800
     }
 ]

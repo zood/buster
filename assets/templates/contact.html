@@ -8,28 +8,8 @@
         </h4>
 
         <p>{{ .GetInTouchWithUsMsg }}
-            <a href="mailto:hello@zoodxyz.com">hello@zoodxyz.com</a>.</p>
+            <a href="mailto:hello@zood.xyz">hello@zood.xyz</a>.</p>
 
     </div>
-</section>
-<section class="form">
-
-    <form action="/contact" method="POST">
-        <div class="form-group">
-            <label for="name">Name <span class="alert">*</span></label>
-            <input tabindex="1" placeholder="John Doe" name="name" type="text" id="name" aria-required="true" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email <span class="alert">*</span></label>
-            <input tabindex="2" type="email" placeholder="john@doe.com" name="email" id="email" aria-required="true" required>
-        </div>
-        <div class="form-group">
-            <label for="message">Message</label>
-            <textarea tabindex="3" rows="6" placeholder="What's on your mind?" name="message" aria-required="true" id="message"></textarea>
-        </div>
-        <div class="form-group">
-            <button tabindex="4" class="btn" type="submit">Send</button>
-        </div>
-    </form>
 </section>
 {{ template "footer.html" . }}

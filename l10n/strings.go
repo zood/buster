@@ -29,8 +29,8 @@ const (
 	AboutEncryptionMsg
 	LotsOfServicesSecureQuestionMsg
 	LotsOfServicesSecureAnswerMsg
-	WhenZoodLocationReleasedQuestionMsg
-	WhenZoodLocationReleasedAnswerMsg
+	WhenZoodLocationIosQuestionMsg
+	WhenZoodLocationIosAnswerMsg
 	IfYouDontSurveilQuestionMsg
 	IfYouDontSurveilAnswerMsg
 	HowDoISubmitQuestionMsg

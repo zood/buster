@@ -54,10 +54,6 @@ func main() {
 	r.HandleFunc("/about", aboutHandler).Methods(http.MethodGet)
 	r.HandleFunc("/products/location", locationAppHomeHandler).Methods(http.MethodGet)
 	r.HandleFunc("/contact", contactHandler).Methods(http.MethodGet)
-	r.HandleFunc("/contact", submitContactFormHandler).Methods(http.MethodPost)
-	r.HandleFunc("/contact", contactSuccessHandler).Methods(http.MethodGet)
-	r.HandleFunc("/contact-error", contactErrorHandler).Methods(http.MethodGet)
-	r.HandleFunc("/contact-success", contactSuccessHandler).Methods(http.MethodGet)
 
 	// blog
 	r.HandleFunc("/blog", blogHomeHandler).Methods(http.MethodGet)
