@@ -2,6 +2,6 @@
 
 set -e
 
-go build -i -o buster
+go build -o buster
 ./buster --resources ./assets/ \
          --dev true

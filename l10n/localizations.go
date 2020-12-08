@@ -25,7 +25,7 @@ var enStrings = map[StringAsset]interface{}{
 	WhenZoodLocationIosQuestionMsg:         "When will Zood Location be available for iOS?",
 	WhenZoodLocationIosAnswerMsg:           `The iOS app is currently undergoing a UI overhaul to bring it to parity with the Android app, but we don't have a release date.`,
 	IfYouDontSurveilQuestionMsg:            "If you don't have advertising or use/sell user data, how will you make money?",
-	IfYouDontSurveilAnswerMsg:              "By charging customers a modest fee to use Zood services.",
+	IfYouDontSurveilAnswerMsg:              "By charging customers a modest fee to use Zood services and/or accepting sponsorships.",
 	HowDoISubmitQuestionMsg:                "How can I give feedback about your services?",
 	HowDoISubmitAnswerMsg:                  template.HTML(`Send us an email at <a href="mailto:hello@zood.xyz">hello@zood.xyz</a>. Constructive feedback is always appreciated, but a few kind words every now and then helps us stay motivated. 😊`),
 	GetInTouchWithUs:                       "Get in touch with us!",
