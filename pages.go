@@ -57,20 +57,6 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
-func locationAppHomeHandler(w http.ResponseWriter, r *http.Request) {
-	tag := l10n.MatchLanguage(r)
-	rsrcs := resourcesFromContext(r.Context())
-	rsrcs.ExecuteTemplate("location-home.html", w, map[string]interface{}{
-		"title":             "Zood Location | Zood",
-		"cssPath":           "/css/location-home.css",
-		"googlePlayURL":     constants.GooglePlayURL,
-		"appStoreURL":       constants.AppStoreURL,
-		"ogImage":           "/images/zood-location-icon-512.png",
-		"zoodLocationBlurb": l10n.String(tag, l10n.ZoodLocationBlurbMsg),
-		"ogDescription":     l10n.String(tag, l10n.ZoodLocationBlurbMsg),
-	})
-}
-
 func mobileAppsPrivacyHandler(w http.ResponseWriter, r *http.Request) {
 	tag := l10n.MatchLanguage(r)
 	rsrcs := resourcesFromContext(r.Context())

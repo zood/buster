@@ -15,8 +15,9 @@ import (
 func disavowEmailHandler(w http.ResponseWriter, r *http.Request) {
 	tmplName := "disavow-email.html"
 	data := map[string]interface{}{
-		"title":   "Disavow Email | Zood",
-		"cssPath": "/css/email-verification.css",
+		"title":        "Disavow Email | Zood",
+		"cssPath":      "/css/email-verification.css",
+		"activeHeader": "",
 	}
 
 	rsrcs := resourcesFromContext(r.Context())
@@ -62,8 +63,9 @@ func disavowEmailHandler(w http.ResponseWriter, r *http.Request) {
 func verifyEmailHandler(w http.ResponseWriter, r *http.Request) {
 	tmplName := "verify-email.html"
 	data := map[string]interface{}{
-		"title":   "Verify Email | Zood",
-		"cssPath": "/css/email-verification.css",
+		"title":        "Verify Email | Zood",
+		"cssPath":      "/css/email-verification.css",
+		"activeHeader": "",
 	}
 
 	rsrcs := resourcesFromContext(r.Context())
@@ -105,7 +107,7 @@ func verifyEmailHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		if errBody.Code == oscar.ErrorMissingVerificationToken {
-			data["line1"] = "Hmm… that URL doesn't work."
+			data["line1"] = "Hmm… that token doesn't seem to be valid."
 			data["line2"] = "Did you already verify your email? If not, double check the URL then try again."
 			rsrcs.ExecuteTemplate(tmplName, w, data)
 			return
