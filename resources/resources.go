@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"html/template"
 	"io"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -13,8 +12,6 @@ import (
 	"sort"
 	"strconv"
 	"time"
-
-	"github.com/pkg/errors"
 )
 
 type Resources struct {
@@ -64,7 +61,7 @@ func (r *Resources) ExecuteTemplateCode(tmplName string, w io.Writer, data map[s
 func (r *Resources) loadPosts() error {
 	err := r.parsePostsManifest()
 	if err != nil {
-		return errors.Wrap(err, "failed to parse posts manifest")
+		return fmt.Errorf("parsing posts manifest: %v", err)
 	}
 	sort.Sort(r.posts)
 	r.postsByID = make(map[int]Post)
@@ -73,9 +70,9 @@ func (r *Resources) loadPosts() error {
 		r.postsByID[p.ID] = p
 		// load the html of the post
 		htmlPath := filepath.Join(r.path, "posts", fmt.Sprintf("%d", p.ID), "index.html")
-		htmlData, err := ioutil.ReadFile(htmlPath)
+		htmlData, err := os.ReadFile(htmlPath)
 		if err != nil {
-			return errors.Wrapf(err, "failed to load html for post %d", p.ID)
+			return fmt.Errorf("loading html for post %d: %v", p.ID, err)
 		}
 		r.postHtml[p.ID] = htmlData
 	}
@@ -85,22 +82,22 @@ func (r *Resources) loadPosts() error {
 
 func (r *Resources) loadTemplates() error {
 	tmplsPath := filepath.Join(r.path, "templates")
-	fis, err := ioutil.ReadDir(tmplsPath)
+	entries, err := os.ReadDir(tmplsPath)
 	if err != nil {
-		return errors.Wrap(err, "failed to read templates directory")
+		return fmt.Errorf("reading templates directory: %v", err)
 	}
 
 	var paths []string
-	for _, fi := range fis {
-		if fi.IsDir() {
+	for _, entry := range entries {
+		if entry.IsDir() {
 			continue
 		}
-		paths = append(paths, filepath.Join(tmplsPath, fi.Name()))
+		paths = append(paths, filepath.Join(tmplsPath, entry.Name()))
 	}
 
 	tmpls, err := template.New("").ParseFiles(paths...)
 	if err != nil {
-		return errors.Wrap(err, "failed to parse templates")
+		return fmt.Errorf("parsing template: %v", err)
 	}
 	r.htmlTemplates = tmpls
 
@@ -111,14 +108,14 @@ func (r *Resources) parsePostsManifest() error {
 	manifestPath := filepath.Join(r.path, "posts", "manifest.json")
 	file, err := os.Open(manifestPath)
 	if err != nil {
-		return errors.Wrap(err, "failed to open posts manifest")
+		return fmt.Errorf("opening posts manifest: %v", err)
 	}
 	defer file.Close()
 
 	r.posts = postSlice{}
 	err = json.NewDecoder(file).Decode(&r.posts)
 	if err != nil {
-		return errors.Wrap(err, "failed to parse posts manifest")
+		return fmt.Errorf("parsing posts manifest: %v", err)
 	}
 
 	return nil
@@ -183,12 +180,12 @@ func (r *Resources) Posts(limit, offset uint) []Post {
 func (r *Resources) loadAll() error {
 	err := r.loadTemplates()
 	if err != nil {
-		return errors.Wrap(err, "failed to load templates")
+		return fmt.Errorf("loading templates: %v", err)
 	}
 
 	err = r.loadPosts()
 	if err != nil {
-		return errors.Wrap(err, "failed to load posts")
+		return fmt.Errorf("loading posts: %v", err)
 	}
 
 	return nil

@@ -4,11 +4,10 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"strings"
 
-	"github.com/pkg/errors"
 	"zood.xyz/buster/oscar"
 )
 
@@ -44,13 +43,13 @@ func disavowEmailHandler(w http.ResponseWriter, r *http.Request) {
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		buf, err := ioutil.ReadAll(resp.Body)
+		buf, err := io.ReadAll(resp.Body)
 		if err != nil {
-			err = errors.Wrapf(err, "problem reading error response while disavowing token '%s'", token)
+			err = fmt.Errorf("problem reading error response while disavowing token '%s': %v", token, err)
 			internalError(w, r, err)
 			return
 		}
-		err = errors.Errorf("problem disavowing token '%s':\noscar responded with %d: %s", token, resp.StatusCode, buf)
+		err = fmt.Errorf("problem disavowing token '%s':\noscar responded with %d: %s", token, resp.StatusCode, buf)
 		internalError(w, r, err)
 		return
 	}
@@ -114,7 +113,7 @@ func verifyEmailHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		// unexpected api response. probably a 500 from oscar
-		err = errors.Errorf("Unexpected response from oscar while attempting to verify token '%s': %d - %s",
+		err = fmt.Errorf("unexpected response from oscar while attempting to verify token '%s': %d - %s",
 			token,
 			errBody.Code,
 			errBody.Msg)

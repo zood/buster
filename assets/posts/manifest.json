@@ -12,5 +12,12 @@
         "title": "Zood Location available for Android",
         "intro": "Today we're publicly releasing Zood Location for Android. This has been the culmination of several years of (part-time) work in the hopes of releasing something easy enough for family members to use, while remaining secure.",
         "date": 1607446800
+    },
+    {
+        "id": 3,
+        "slug": "why-does-zood-location-for-android-use-the-google-maps-sdk",
+        "title": "Why does Zood Location for Android use the Google Maps SDK?",
+        "intro": "This is a question that has been asked often. I wrote up a comprehensive answer on a social networking site awhile ago, but I figure it should also be here.",
+        "date": 1688254561
     }
 ]
