@@ -9,7 +9,7 @@ This is the content of the [Zood website](https://www.zood.xyz). Probably not ve
 4. `./run.sh`
 
 ### License
-Copyright 2020 Arash Payan
+Copyright 2025 Arash Payan
 
 Licensed under the AGPLv3: https://www.gnu.org/licenses/agpl-3.0.html
 

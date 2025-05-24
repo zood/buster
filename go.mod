@@ -1,12 +1,12 @@
 module zood.xyz/buster
 
-go 1.20
+go 1.24.3
 
 require (
-	github.com/gorilla/mux v1.8.0
+	github.com/gorilla/mux v1.8.1
 	github.com/russross/blackfriday/v2 v2.1.0
-	github.com/stretchr/testify v1.8.4
-	golang.org/x/text v0.10.0
+	github.com/stretchr/testify v1.10.0
+	golang.org/x/text v0.25.0
 )
 
 require (
