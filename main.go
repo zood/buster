@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
+	"zood.xyz/buster/cors"
 	"zood.xyz/buster/email"
 	"zood.xyz/buster/mailgun"
 	"zood.xyz/buster/resources"
@@ -73,7 +74,7 @@ func main() {
 	} else {
 		emailer = mailgun.New(*mailgunApiKey, *mailgunDomain, false)
 	}
-	r.Use(busterMiddleware{rsrcs: rsrcs, sendEmailer: emailer}.Middleware)
+	r.Use(busterMiddleware{rsrcs: rsrcs, sendEmailer: emailer}.Middleware, cors.Middleware)
 
 	// playground()
 	var hostAddress string
@@ -93,8 +94,3 @@ func main() {
 	log.Printf("Starting app on port %d…", *port)
 	log.Fatal(server.ListenAndServe())
 }
-
-// func playground() {
-// 	output := blackfriday.Run([]byte("string"))
-// 	log.Printf("output: '%s'", output)
-// }
