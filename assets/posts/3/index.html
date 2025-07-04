@@ -1,5 +1,7 @@
 <h1>Why does Zood for Android use Google Maps?</h1>
 
+<p>UPDATE 2023-07-03: <a href="/blog/4/now-using-openstreetmap">Zood Location now uses OpenStreetMap tiles</a></p>
+
 <p>There are two reasons:</p>
 
 <li>Running a tile server for Zood would cost about $400/month. Zood doesn't make any money right now, so that's not an expense I can handle at the moment. Google's pricing is super reasonable so I'm using it because it has the best SDK compared to other providers I've tried. It's the fastest at loading and scrolling. It performs well in poor network conditions. The library doesn't make the APK very large (though that's because much of the logic is part of GMS). The SDK actually stores data in the cache as opposed to the user's data directory, thus letting users reclaim SD card space when needed. Most importantly, it's not buggy. Other SDKs would be the source of the majority of crashes in the app. I have yet to experience a single crash with the Google Maps SDK.</li>

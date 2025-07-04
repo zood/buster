@@ -19,5 +19,12 @@
         "title": "Why does Zood Location for Android use the Google Maps SDK?",
         "intro": "This is a question that has been asked often. I wrote up a comprehensive answer on a social networking site awhile ago, but I figure it should also be here.",
         "date": 1688254561
+    },
+    {
+        "id": 4,
+        "slug": "now-using-openstreetmap",
+        "title": "Now Using OpenStreetMap!",
+        "intro": "It's been a long time coming, but Zood Location now uses data from OpenStreetMap…",
+        "date": 1751609101
     }
 ]
