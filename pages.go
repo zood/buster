@@ -65,7 +65,7 @@ func mobileAppsPrivacyHandler(w http.ResponseWriter, r *http.Request) {
 		"activeHeader":               "privacymobile",
 		"cssPath":                    "/css/privacy-mobile-apps.css",
 		"MobileAppsPrivacyPolicy":    l10n.String(tag, l10n.MobileAppsPrivacyPolicy),
-		"MobileAppsPrivacyPolicyMsg": l10n.String(tag, l10n.MobileAppsPrivacyPolicyMsg),
+		"MobileAppsPrivacyPolicyMsg": l10n.Markdown(tag, l10n.MobileAppsPrivacyPolicyMsg),
 		"StuffWeKnowAboutYou":        l10n.String(tag, l10n.StuffWeKnowAboutYou),
 		"StuffWeKnowAboutYouMsg":     l10n.Markdown(tag, l10n.StuffWeKnowAboutYouMsg),
 		"StuffWeBackupForYou":        l10n.String(tag, l10n.StuffWeBackupForYou),
