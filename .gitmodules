@@ -1,0 +1,3 @@
+[submodule "assets/js/zood-js"]
+	path = assets/js/zood-js
+	url = https://github.com/zood/zood-js.git

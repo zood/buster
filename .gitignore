@@ -2,3 +2,4 @@ buster
 *.DS_Store
 .stignore
 .stfolder
+*AGENTS.md

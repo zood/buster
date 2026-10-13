@@ -70,6 +70,8 @@ func mobileAppsPrivacyHandler(w http.ResponseWriter, r *http.Request) {
 		"StuffWeKnowAboutYouMsg":     l10n.Markdown(tag, l10n.StuffWeKnowAboutYouMsg),
 		"StuffWeBackupForYou":        l10n.String(tag, l10n.StuffWeBackupForYou),
 		"StuffWeBackupForYouMsg":     l10n.Markdown(tag, l10n.StuffWeBackupForYouMsg),
+		"DeleteYourAccount":          l10n.String(tag, l10n.DeleteYourAccount),
+		"DeleteYourAccountMsg":       l10n.String(tag, l10n.DeleteYourAccountMsg),
 	})
 }
 

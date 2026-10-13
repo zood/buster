@@ -48,6 +48,22 @@ const (
 	StuffWeBackupForYou
 	StuffWeBackupForYouMsg
 	WhosBehindZoodInterrogative
+	DeleteYourAccount
+	DeleteYourAccountMsg
+	DeleteAccountConfirmationMsg
+	BeginAccountDeletion
+	LogInToContinueMsg
+	Username
+	Password
+	LogIn
+	AccountDeletionIsPermanentMsg
+	IUnderstandDeleteMyAccount
+	DeletionComplete
+	IncorrectUsernameOrPasswordMsg
+	InvalidUsernameMsg
+	NetworkErrorMsg
+	UnexpectedErrorMsg
+	WorkingEllipsis
 )
 
 // String returns a localized string or template.HTML matching the language

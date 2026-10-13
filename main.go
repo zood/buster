@@ -49,6 +49,7 @@ func main() {
 	r.PathPrefix("/images/").Handler(http.StripPrefix("/images/", http.FileServer(http.Dir(filepath.Join(*resPath, "images")))))
 	r.PathPrefix("/fonts/").Handler(http.StripPrefix("/fonts/", http.FileServer(http.Dir(filepath.Join(*resPath, "fonts")))))
 	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(filepath.Join(*resPath, "static")))))
+	r.PathPrefix("/js/").Handler(http.StripPrefix("/js/", http.FileServer(http.Dir(filepath.Join(*resPath, "js")))))
 
 	r.HandleFunc("/", homeHandler).Methods(http.MethodGet)
 	r.HandleFunc("/privacy", privacyHandler).Methods(http.MethodGet)
@@ -61,6 +62,8 @@ func main() {
 	r.HandleFunc("/blog/archive", blogArchivesHandler).Methods(http.MethodGet)
 	r.HandleFunc("/blog/{id:[0-9]+}", blogPostHandler).Methods(http.MethodGet)
 	r.HandleFunc("/blog/{id:[0-9]+}/{slug}", blogPostHandler).Methods(http.MethodGet)
+
+	r.HandleFunc("/location/delete-account", deleteAccountHandler).Methods(http.MethodGet)
 
 	r.HandleFunc("/verify-email", verifyEmailHandler).Methods(http.MethodGet)
 	r.HandleFunc("/disavow-email", disavowEmailHandler).Methods(http.MethodGet)

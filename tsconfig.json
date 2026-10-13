@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "strictNullChecks": true,
+        "target": "es2017",
+        "lib": [
+            "es2017",
+            "dom"
+        ]
+    },
+    "include": [
+        "assets/js/*.ts",
+        "assets/js/zood-js/js/zood.ts",
+        "assets/js/zood-js/typings/*.d.ts"
+    ]
+}

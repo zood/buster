@@ -1,0 +1,54 @@
+{{ template "header.html" . }}
+
+<section class="feature delete-account" id="delete-account" data-incorrect-login="{{ .IncorrectUsernameOrPassword }}"
+    data-invalid-username="{{ .InvalidUsernameMsg }}" data-network-error="{{ .NetworkErrorMsg }}" data-unexpected-error="{{ .UnexpectedErrorMsg }}">
+
+    <div>
+        <h4>{{ .DeleteYourAccount }}</h4>
+
+        <div class="step" id="step-confirm">
+            <p>{{ .DeleteAccountConfirmationMsg }}</p>
+            <button class="btn btn-danger" id="begin-button" type="button">{{ .BeginAccountDeletion }}</button>
+        </div>
+
+        <div class="step" id="step-login" hidden>
+            <p>{{ .LogInToContinueMsg }}</p>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">{{ .Username }}</label>
+                    <input id="username" name="username" type="text" autocomplete="username" autocapitalize="none"
+                        autocorrect="off" spellcheck="false" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">{{ .Password }}</label>
+                    <input id="password" name="password" type="password" autocomplete="current-password" required>
+                </div>
+                <p class="error-message" id="login-error" role="alert" hidden></p>
+                <div class="form-group">
+                    <button class="btn" id="login-button" type="submit">{{ .LogIn }}</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="step" id="step-warning" hidden>
+            <p>{{ .AccountDeletionIsPermanentMsg }}</p>
+            <p class="error-message" id="delete-error" role="alert" hidden></p>
+            <button class="btn btn-danger" id="delete-button" type="button">{{ .IUnderstandDeleteMyAccount }}</button>
+        </div>
+
+        <div class="step" id="step-done" hidden>
+            <p>{{ .DeletionComplete }}</p>
+        </div>
+
+        <div class="progress" id="progress" role="status" hidden>
+            <div class="spinner"></div>
+            <span>{{ .WorkingEllipsis }}</span>
+        </div>
+    </div>
+</section>
+
+<script src="/js/delete-account.js"></script>
+<script src="/js/zood-js/js/zood.js"></script>
+{{/* delete-account.js adds libsodium itself, so it can tell when it fails to load. */}}
+
+{{ template "footer.html" . }}
