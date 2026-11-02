@@ -1,5 +1,6 @@
 {{ template "header.html" . }}
 <h1>Zood Blog</h1>
+<p class="feed-link"><a href="/blog/rss.xml">{{ .SubscribeViaRSS }}</a></p>
 <section class="blog-grid">
 {{ range .posts }}
 

@@ -177,6 +177,18 @@ func (r *Resources) Posts(limit, offset uint) []Post {
 	return r.posts[start:end]
 }
 
+// PostsWithBodies returns the same posts as Posts, along with their bodies.
+// In dev mode, it reloads the resources once, whereas calling PostBody for
+// each post reloads them on every call.
+func (r *Resources) PostsWithBodies(limit, offset uint) []PostWithBody {
+	posts := r.Posts(limit, offset)
+	result := make([]PostWithBody, 0, len(posts))
+	for _, p := range posts {
+		result = append(result, PostWithBody{Post: p, Body: template.HTML(r.postHtml[p.ID])})
+	}
+	return result
+}
+
 func (r *Resources) loadAll() error {
 	err := r.loadTemplates()
 	if err != nil {

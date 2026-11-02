@@ -11,6 +11,7 @@ import (
 	"github.com/gorilla/mux"
 	"zood.xyz/buster/cors"
 	"zood.xyz/buster/email"
+	"zood.xyz/buster/feed"
 	"zood.xyz/buster/mailgun"
 	"zood.xyz/buster/resources"
 )
@@ -60,6 +61,7 @@ func main() {
 	// blog
 	r.HandleFunc("/blog", blogHomeHandler).Methods(http.MethodGet)
 	r.HandleFunc("/blog/archive", blogArchivesHandler).Methods(http.MethodGet)
+	r.HandleFunc(feed.Path, blogFeedHandler).Methods(http.MethodGet, http.MethodHead)
 	r.HandleFunc("/blog/{id:[0-9]+}", blogPostHandler).Methods(http.MethodGet)
 	r.HandleFunc("/blog/{id:[0-9]+}/{slug}", blogPostHandler).Methods(http.MethodGet)
 

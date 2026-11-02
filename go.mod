@@ -1,16 +1,13 @@
 module zood.xyz/buster
 
-go 1.24.4
+go 1.27.3
 
 require (
 	github.com/gorilla/mux v1.8.1
 	github.com/russross/blackfriday/v2 v2.1.0
-	github.com/stretchr/testify v1.10.0
-	golang.org/x/text v0.25.0
+	github.com/stretchr/testify v1.12.1
+	golang.org/x/net v0.62.0
+	golang.org/x/text v0.43.0
 )
 
-require (
-	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/pmezard/go-difflib v1.0.0 // indirect
-	gopkg.in/yaml.v3 v3.0.1 // indirect
-)
+require go.yaml.in/yaml/v3 v3.0.5 // indirect

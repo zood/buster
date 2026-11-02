@@ -57,4 +57,6 @@ var enStrings = map[StringAsset]interface{}{
 	NetworkErrorMsg:                        "We couldn't reach the Zood server. Check your connection, then try again.",
 	UnexpectedErrorMsg:                     "Something went wrong. Please try again. If it keeps happening, email us at hello@zood.xyz.",
 	WorkingEllipsis:                        "Working…",
+	BlogFeedDescriptionMsg:                 "News and announcements from Zood.",
+	SubscribeViaRSS:                        "Subscribe via RSS",
 }

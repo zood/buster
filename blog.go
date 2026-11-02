@@ -1,13 +1,21 @@
 package main
 
 import (
+	"bytes"
+	"crypto/sha256"
 	"fmt"
 	"net/http"
 	"strconv"
 	"time"
 
 	"github.com/gorilla/mux"
+	"zood.xyz/buster/constants"
+	"zood.xyz/buster/feed"
+	"zood.xyz/buster/l10n"
 )
+
+// feedLength is the maximum number of posts in the RSS feed.
+const feedLength = 20
 
 func blogArchivesHandler(w http.ResponseWriter, r *http.Request) {
 	rsrcs := resourcesFromContext(r.Context())
@@ -18,13 +26,38 @@ func blogArchivesHandler(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
+func blogFeedHandler(w http.ResponseWriter, r *http.Request) {
+	tag := l10n.MatchLanguage(r)
+	rsrcs := resourcesFromContext(r.Context())
+	data, err := feed.RSS(feed.Channel{
+		SiteURL:     constants.SiteURL,
+		Title:       "Zood Blog",
+		Description: fmt.Sprint(l10n.String(tag, l10n.BlogFeedDescriptionMsg)),
+		Language:    tag.String(),
+	}, rsrcs.PostsWithBodies(feedLength, 0))
+	if err != nil {
+		internalError(w, r, err)
+		return
+	}
+
+	// Feed readers poll the feed, so set an ETag to support conditional
+	// requests. Last-Modified is omitted because the only date available,
+	// that of the newest post, doesn't change when an older post is edited.
+	sum := sha256.Sum256(data)
+	w.Header().Set("Content-Type", "application/rss+xml; charset=utf-8")
+	w.Header().Set("ETag", fmt.Sprintf(`"%x"`, sum[:16]))
+	http.ServeContent(w, r, "", time.Time{}, bytes.NewReader(data))
+}
+
 func blogHomeHandler(w http.ResponseWriter, r *http.Request) {
+	tag := l10n.MatchLanguage(r)
 	rsrcs := resourcesFromContext(r.Context())
 	rsrcs.ExecuteTemplate("blog-home.html", w, map[string]interface{}{
-		"posts":        rsrcs.Posts(5, 0),
-		"title":        "Blog | Zood",
-		"activeHeader": "news",
-		"cssPath":      "/css/blog.css",
+		"posts":           rsrcs.Posts(5, 0),
+		"title":           "Blog | Zood",
+		"activeHeader":    "news",
+		"cssPath":         "/css/blog.css",
+		"SubscribeViaRSS": l10n.String(tag, l10n.SubscribeViaRSS),
 	})
 }
 

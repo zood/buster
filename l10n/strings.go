@@ -64,6 +64,8 @@ const (
 	NetworkErrorMsg
 	UnexpectedErrorMsg
 	WorkingEllipsis
+	BlogFeedDescriptionMsg
+	SubscribeViaRSS
 )
 
 // String returns a localized string or template.HTML matching the language

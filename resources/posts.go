@@ -1,6 +1,7 @@
 package resources
 
 import (
+	"html/template"
 	"log"
 	"time"
 )
@@ -12,6 +13,12 @@ type Post struct {
 	Title string `json:"title"`
 	Intro string `json:"intro"`
 	Date  int64  `json:"date"`
+}
+
+// A PostWithBody holds a Post and its HTML body.
+type PostWithBody struct {
+	Post
+	Body template.HTML
 }
 
 // MonthDayYear returns the post date in PST time because that's where Zood is located
