@@ -4,15 +4,22 @@ import (
 	"html/template"
 	"log"
 	"reflect"
+	"sync"
 
 	"github.com/russross/blackfriday/v2"
 	"golang.org/x/text/language"
 )
 
-var markdownCache = map[StringAsset]template.HTML{}
+var (
+	markdownMu    sync.RWMutex
+	markdownCache = map[StringAsset]template.HTML{}
+)
 
 func Markdown(tag language.Tag, asset StringAsset) template.HTML {
-	if cache, ok := markdownCache[asset]; ok {
+	markdownMu.RLock()
+	cache, ok := markdownCache[asset]
+	markdownMu.RUnlock()
+	if ok {
 		return cache
 	}
 
@@ -32,7 +39,10 @@ func Markdown(tag language.Tag, asset StringAsset) template.HTML {
 		log.Printf("ERROR: unsupported type (%v) for asset %d", reflect.TypeOf(s), asset)
 		return "&lt;undefined&gt;"
 	}
+
+	markdownMu.Lock()
 	markdownCache[asset] = output
+	markdownMu.Unlock()
 
 	return output
 }

@@ -46,11 +46,13 @@ func main() {
 	rsrcs.DevMode = *devMode
 
 	r := mux.NewRouter().StrictSlash(true)
-	r.PathPrefix("/css/").Handler(http.StripPrefix("/css/", http.FileServer(http.Dir(filepath.Join(*resPath, "css")))))
-	r.PathPrefix("/images/").Handler(http.StripPrefix("/images/", http.FileServer(http.Dir(filepath.Join(*resPath, "images")))))
-	r.PathPrefix("/fonts/").Handler(http.StripPrefix("/fonts/", http.FileServer(http.Dir(filepath.Join(*resPath, "fonts")))))
+	r.PathPrefix("/css/").Handler(noCache(http.StripPrefix("/css/", http.FileServer(http.Dir(filepath.Join(*resPath, "css"))))))
+	r.PathPrefix("/images/").Handler(noCache(http.StripPrefix("/images/", http.FileServer(http.Dir(filepath.Join(*resPath, "images"))))))
+	r.PathPrefix("/fonts/").Handler(noCache(http.StripPrefix("/fonts/", http.FileServer(http.Dir(filepath.Join(*resPath, "fonts"))))))
+	// /static/ is not wrapped in noCache: the apps load map styles from it
+	// (see cors/), and their handling of "Cache-Control: no-cache" is untested.
 	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(filepath.Join(*resPath, "static")))))
-	r.PathPrefix("/js/").Handler(http.StripPrefix("/js/", http.FileServer(http.Dir(filepath.Join(*resPath, "js")))))
+	r.PathPrefix("/js/").Handler(noCache(http.StripPrefix("/js/", http.FileServer(http.Dir(filepath.Join(*resPath, "js"))))))
 
 	r.HandleFunc("/", homeHandler).Methods(http.MethodGet)
 	r.HandleFunc("/privacy", privacyHandler).Methods(http.MethodGet)

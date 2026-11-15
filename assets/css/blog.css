@@ -359,6 +359,22 @@ h1 {
   margin-top: 0.875em;
 }
 
+.article-content .screenshots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5em;
+  margin-bottom: 2.8em;
+}
+
+.article-content .screenshots:last-child {
+  margin-bottom: 0;
+}
+
+.article-content .screenshots figure {
+  margin: 0;
+}
+
 .article-content table {
   width: 100%;
 }

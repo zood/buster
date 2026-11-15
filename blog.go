@@ -92,6 +92,7 @@ func blogPostHandler(w http.ResponseWriter, r *http.Request) {
 	if slug != post.Slug {
 		// They're probably requesting a post asset
 		assetPath := rsrcs.PostAssetPath(post.ID, slug)
+		w.Header().Set("Cache-Control", "no-cache")
 		http.ServeFile(w, r, assetPath)
 		return
 	}

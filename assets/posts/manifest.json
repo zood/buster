@@ -26,5 +26,12 @@
         "title": "Now Using OpenStreetMap!",
         "intro": "It's been a long time coming, but Zood Location now uses data from OpenStreetMap…",
         "date": 1751609101
+    },
+    {
+        "id": 5,
+        "slug": "android-dark-mode-and-rss",
+        "title": "Dark Mode & RSS Support",
+        "intro": "Dark mode now available in version 0.68",
+        "date": 1794711464
     }
 ]

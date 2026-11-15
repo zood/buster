@@ -175,9 +175,9 @@ func TestRSSFromAssets(t *testing.T) {
 	attrRE := regexp.MustCompile(`\b(?:href|src)="([^"]*)"`)
 	for i, item := range feed.Channel.Items {
 		require.Equal(t, posts[i].Title, item.Title)
-		// Posts that aren't in the manifest, such as the sample in posts/5,
+		// Posts that aren't in the manifest, such as the sample in posts/6,
 		// must not appear in the feed.
-		require.NotEqual(t, siteURL+"/blog/5", item.GUID.Value)
+		require.NotEqual(t, siteURL+"/blog/6", item.GUID.Value)
 		require.False(t, strings.HasPrefix(item.Content, "<h1"), "post %s still opens with its h1", item.Link)
 		for _, m := range attrRE.FindAllStringSubmatch(item.Content, -1) {
 			u, err := url.Parse(m[1])
